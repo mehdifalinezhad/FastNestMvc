@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Persistant\Persistant.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Enums\" />
+  </ItemGroup>
+
 </Project>

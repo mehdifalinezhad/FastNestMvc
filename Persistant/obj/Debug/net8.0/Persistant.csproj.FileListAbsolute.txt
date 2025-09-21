@@ -36,13 +36,16 @@ C:\AspOwn\FastNessMvc\Persistant\bin\Debug\net8.0\Persistant.deps.json
 C:\AspOwn\FastNessMvc\Persistant\bin\Debug\net8.0\Persistant.runtimeconfig.json
 C:\AspOwn\FastNessMvc\Persistant\bin\Debug\net8.0\Persistant.dll
 C:\AspOwn\FastNessMvc\Persistant\bin\Debug\net8.0\Persistant.pdb
+C:\AspOwn\FastNessMvc\Persistant\bin\Debug\net8.0\Application.dll
 C:\AspOwn\FastNessMvc\Persistant\bin\Debug\net8.0\Domain.dll
+C:\AspOwn\FastNessMvc\Persistant\bin\Debug\net8.0\Application.pdb
 C:\AspOwn\FastNessMvc\Persistant\bin\Debug\net8.0\Domain.pdb
 C:\AspOwn\FastNessMvc\Persistant\obj\Debug\net8.0\Persistant.csproj.AssemblyReference.cache
 C:\AspOwn\FastNessMvc\Persistant\obj\Debug\net8.0\Persistant.GeneratedMSBuildEditorConfig.editorconfig
 C:\AspOwn\FastNessMvc\Persistant\obj\Debug\net8.0\Persistant.AssemblyInfoInputs.cache
 C:\AspOwn\FastNessMvc\Persistant\obj\Debug\net8.0\Persistant.AssemblyInfo.cs
 C:\AspOwn\FastNessMvc\Persistant\obj\Debug\net8.0\Persistant.csproj.CoreCompileInputs.cache
+C:\AspOwn\FastNessMvc\Persistant\obj\Debug\net8.0\Persistant.sourcelink.json
 C:\AspOwn\FastNessMvc\Persistant\obj\Debug\net8.0\Persistant.csproj.Up2Date
 C:\AspOwn\FastNessMvc\Persistant\obj\Debug\net8.0\Persistant.dll
 C:\AspOwn\FastNessMvc\Persistant\obj\Debug\net8.0\refint\Persistant.dll

@@ -30,6 +30,7 @@ C:\AspOwn\FastNessMvc\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfi
 C:\AspOwn\FastNessMvc\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
 C:\AspOwn\FastNessMvc\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
 C:\AspOwn\FastNessMvc\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\AspOwn\FastNessMvc\Domain\obj\Debug\net8.0\Domain.sourcelink.json
 C:\AspOwn\FastNessMvc\Domain\obj\Debug\net8.0\Domain.dll
 C:\AspOwn\FastNessMvc\Domain\obj\Debug\net8.0\refint\Domain.dll
 C:\AspOwn\FastNessMvc\Domain\obj\Debug\net8.0\Domain.pdb

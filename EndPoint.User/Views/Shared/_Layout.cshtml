@@ -5,19 +5,25 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>نمودارهای Chartist</title>
-    <link rel="shortcut icon" type="image/x-icon" href="~/FrestAssets/favicon.ico">
+    <title>FastNest</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/FrestAssets/images/ico/favicon.ico">
     <meta name="theme-color" content="#5A8DEE">
 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="~/FrestAssets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="~/FrestAssets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="~/FrestAssets/vendors/css/extensions/swiper.min.css">
     <link href="~/Frestassets/vendors/css/forms/select/select2.min.css" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="~/FrestAssets/vendors/css/charts/chartist.min.css">
-    <!-- END: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="~/FrestAssets/vendors/css/pickers/pickadate/pickadate.css">
+    <link rel="stylesheet" type="text/css" href="~/FrestAssets/vendors/css/pickers/daterange/daterangepicker.css">
+   
+@*    <link rel="stylesheet" type="text/css" href="~/FrestAssets/vendors/css/charts/chartist.min.css"> 
+ *@    <!-- END: Vendor CSS-->
     <!-- BEGIN: Theme CSS-->
     <link rel="stylesheet" type="text/css" href="~/FrestAssets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="~/FrestAssets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="~/FrestAssets/vendors/css/pickers/datepicker-jalali/bootstrap-datepicker.min.css">
     <link rel="stylesheet" type="text/css" href="~/FrestAssets/css/colors.css">
     <link rel="stylesheet" type="text/css" href="~/FrestAssets/css/components.css">
     <link rel="stylesheet" type="text/css" href="~/FrestAssets/css/themes/dark-layout.css">
@@ -25,8 +31,9 @@
     <!-- END: Theme CSS-->
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="~/FrestAssets/css/core/menu/menu-types/horizontal-menu.css">
-    <link rel="stylesheet" type="text/css" href="~/FrestAssets/css/pages/chart-chartist.css">
-    <!-- END: Page CSS-->
+
+    <link rel="stylesheet" type="text/css" href="~/FrestAssets/css/pages/dashboard-ecommerce.css">
+   <!-- END: Page CSS-->
 </head>
 <!-- END: Head-->
 <!-- BEGIN: Body-->
@@ -44,7 +51,7 @@
                 </li>
             </ul>
         </div>
-        <div class="navbar-wrapper">
+        <div class="navbar-wrapper">vendors.min.css
             <div class="navbar-container content">
                 <div class="navbar-collapse" id="navbar-mobile">
                     <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center">
@@ -673,6 +680,8 @@
 
     <!-- END: Main Menu-->
     <!-- BEGIN: Content-->
+   
+
     @RenderBody();
     <!-- END:
             <!-- BEGIN: Customizer-->
@@ -945,18 +954,32 @@
         <p class="clearfix mb-0">
             <span class="float-left d-inline-block">ارائه شده در وب‌سایت <a href="https://www.rtl-theme.com" target="_blank">راست‌چین</a></span><span class="float-right d-sm-inline-block d-none">ساخته شده با<i class="bx bxs-heart pink ml-50 font-small-3"></i></span>
             <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="bx bx-up-arrow-alt"></i></button>
-        </p>
+  
     </footer>
     <!-- END: Footer-->
     <script src="~/FrestAssets/vendors/js/vendors.min.js"></script>
     <script src="~/FrestAssets/fonts/LivIconsEvo/js/LivIconsEvo.tools.min.js"></script>
     <script src="~/FrestAssets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
     <script src="~/FrestAssets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+    <script src="~/FrestAssets/vendors/js/forms/select/select2.full.min.js"></script>
     <!-- BEGIN Vendor JS-->
     <!-- BEGIN: Page Vendor JS-->
     <script src="~/FrestAssets/vendors/js/ui/jquery.sticky.js"></script>
-    <script src="~/FrestAssets/vendors/js/charts/chartist.min.js"></script>
-    <!-- END: Page Vendor JS-->
+     <script src="~/FrestAssets/vendors/js/pickers/pickadate/picker.js"></script>
+    <script src="~/FrestAssets/vendors/js/pickers/pickadate/picker.date.js"></script>
+    <script src="~/FrestAssets/vendors/js/pickers/pickadate/picker.time.js"></script>
+    <script src="~/FrestAssets/vendors/js/pickers/pickadate/legacy.js"></script>
+    <script src="~/FrestAssets/vendors/js/pickers/daterange/moment.min.js"></script>
+    <script src="~/FrestAssets/vendors/js/pickers/daterange/daterangepicker.js"></script>
+
+    <script src="~/FrestAssets/vendors/js/pickers/datepicker-jalali/bootstrap-datepicker.min.js"></script>
+    <script src="~/FrestAssets/vendors/js/pickers/datepicker-jalali/bootstrap-datepicker.fa.min.js"></script> 
+    <script src="~/FrestAssets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js"></script>
+
+    <script src="~/FrestAssets/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="~/FrestAssets/vendors/js/extensions/swiper.min.js"></script>
+@*      <script src="~/FrestAssets/vendors/js/charts/chartist.min.js"></script> 
+ *@    <!-- END: Page Vendor JS-->
     <!-- BEGIN: Theme JS-->
     <script src="~/FrestAssets/js/scripts/configs/horizontal-menu.js"></script>
     <script src="~/FrestAssets/js/scripts/configs/vertical-menu-dark.js"></script>
@@ -967,15 +990,12 @@
     <script src="~/FrestAssets/js/scripts/customizer.js"></script>
     <!-- END: Theme JS-->
     <!-- BEGIN: Page JS-->
-    <script src="~/FrestAssets/js/scripts/charts/chart-chartist.js"></script>
-    <!-- END: Page JS-->
-    <script src="~/FrestAssets/js/scripts/pickers/datetime/pick-a-datetime.js"></script>
+   @*  <script src="~/FrestAssets/js/scripts/pages/dashboard-ecommerce.js"></script> *@
+@*     <script src="~/FrestAssets/js/scripts/charts/chart-chartist.js"></script>
+ *@    <!-- END: Page JS-->
     @RenderSection("select2Js", false) 
-
-
-
-
-
+    @RenderSection("theDateTime", false)
+   
 
 
 </body>

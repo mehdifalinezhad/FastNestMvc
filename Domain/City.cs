@@ -10,7 +10,7 @@ namespace Domain
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int stateId { get; set; }
+       // public int stateId { get; set; }
         public State state { get; set; }
     }
 }

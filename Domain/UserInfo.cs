@@ -1,9 +1,13 @@
-﻿namespace Domain
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Domain
 {
     public class UserInfo
     {
-        public int Id { get; set;} 
-        public Guid UserId { get; set;} 
+       public int Id { get; set;} 
+        [ForeignKey("User")]
+        public Guid UserId { get; set;} //به دلیل رابطه یک به یک میباشد
         public User? user { get; set;}
         public int? AbdominalRound { get; set; }
         public int? ArmRound { get; set; }
@@ -24,11 +28,14 @@
         public string? EaveningMeal { get; set;}
         public string? LastMeal { get; set;}
         public string? Job { get; set;}
+        public string? FavoritFood { get; set;}
         //اقدامات لاغری
         public string? ActionSkiny { get; set;}
         public string? DailyActivity { get; set;}
-        public int cityId { get; set;}
+        //public int cityId { get; set;}
         public City? city { get; set;}
-        public ICollection<UserSymptoms> UserSymsons {get; set;}    
+        public ICollection<Symptoms> Symsons {get; set;}    
+        public ICollection<Sickness> sicKness {get; set;}    
+        public ICollection<Medicines> medicins{get; set;}    
     }
 } 

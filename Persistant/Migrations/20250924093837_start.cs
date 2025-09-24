@@ -74,19 +74,6 @@ namespace Persistant.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Sickness",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    name = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Sickness", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "State",
                 columns: table => new
                 {
@@ -97,19 +84,6 @@ namespace Persistant.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_State", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Symptoms",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Discription = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Symptoms", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -245,16 +219,44 @@ namespace Persistant.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    userId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     TotalPrise = table.Column<float>(type: "real", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Orders", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Orders_AspNetUsers_UserId",
+                        name: "FK_Orders_AspNetUsers_userId",
+                        column: x => x.userId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Foodplan",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    ExpirationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DuratioTImeMeal = table.Column<int>(type: "int", nullable: true),
+                    CategoryFoodPlanId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Foodplan", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Foodplan_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Foodplan_categoryFoodPlans_CategoryFoodPlanId",
+                        column: x => x.CategoryFoodPlanId,
+                        principalTable: "categoryFoodPlans",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -280,36 +282,88 @@ namespace Persistant.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Foodplan",
+                name: "Food",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    foodplanId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Food", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Food_Foodplan_foodplanId",
+                        column: x => x.foodplanId,
+                        principalTable: "Foodplan",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "OrderItems",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     orderId = table.Column<int>(type: "int", nullable: true),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    ExpirationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DuratioTImeMeal = table.Column<int>(type: "int", nullable: true),
-                    CategoryFoodPlanId = table.Column<int>(type: "int", nullable: false)
+                    foodplanId = table.Column<int>(type: "int", nullable: true),
+                    Count = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Foodplan", x => x.Id);
+                    table.PrimaryKey("PK_OrderItems", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Foodplan_AspNetUsers_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AspNetUsers",
+                        name: "FK_OrderItems_Foodplan_foodplanId",
+                        column: x => x.foodplanId,
+                        principalTable: "Foodplan",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Foodplan_Orders_orderId",
+                        name: "FK_OrderItems_Orders_orderId",
                         column: x => x.orderId,
                         principalTable: "Orders",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Spice",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<int>(type: "int", nullable: false),
+                    foodPlanId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Spice", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Foodplan_categoryFoodPlans_CategoryFoodPlanId",
-                        column: x => x.CategoryFoodPlanId,
-                        principalTable: "categoryFoodPlans",
+                        name: "FK_Spice_Foodplan_foodPlanId",
+                        column: x => x.foodPlanId,
+                        principalTable: "Foodplan",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Vitamins",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<int>(type: "int", nullable: false),
+                    foodPlanId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Vitamins", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Vitamins_Foodplan_foodPlanId",
+                        column: x => x.foodPlanId,
+                        principalTable: "Foodplan",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -341,7 +395,7 @@ namespace Persistant.Migrations
                     Job = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ActionSkiny = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DailyActivity = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    cityId = table.Column<int>(type: "int", nullable: false)
+                    cityId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -361,88 +415,81 @@ namespace Persistant.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Food",
+                name: "Sickness",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FoodPlanId = table.Column<int>(type: "int", nullable: false)
+                    userInfoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Food", x => x.Id);
+                    table.PrimaryKey("PK_Sickness", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Food_Foodplan_FoodPlanId",
-                        column: x => x.FoodPlanId,
-                        principalTable: "Foodplan",
+                        name: "FK_Sickness_UserInfo_userInfoId",
+                        column: x => x.userInfoId,
+                        principalTable: "UserInfo",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "OrderItems",
+                name: "Symptoms",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    OrderId = table.Column<int>(type: "int", nullable: false),
-                    FoodplanId = table.Column<int>(type: "int", nullable: false),
-                    Count = table.Column<int>(type: "int", nullable: false)
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FoodplanId = table.Column<int>(type: "int", nullable: true),
+                    SymptomsId = table.Column<int>(type: "int", nullable: true),
+                    UserInfoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OrderItems", x => x.Id);
+                    table.PrimaryKey("PK_Symptoms", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_OrderItems_Foodplan_FoodplanId",
+                        name: "FK_Symptoms_Foodplan_FoodplanId",
                         column: x => x.FoodplanId,
                         principalTable: "Foodplan",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_OrderItems_Orders_OrderId",
-                        column: x => x.OrderId,
-                        principalTable: "Orders",
+                        name: "FK_Symptoms_Symptoms_SymptomsId",
+                        column: x => x.SymptomsId,
+                        principalTable: "Symptoms",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Symptoms_UserInfo_UserInfoId",
+                        column: x => x.UserInfoId,
+                        principalTable: "UserInfo",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Spice",
+                name: "UserSymptoms",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    name = table.Column<int>(type: "int", nullable: false),
-                    FoodPlanId = table.Column<int>(type: "int", nullable: false)
+                    userIndoId = table.Column<int>(type: "int", nullable: false),
+                    symsonsId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Spice", x => x.Id);
+                    table.PrimaryKey("PK_UserSymptoms", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Spice_Foodplan_FoodPlanId",
-                        column: x => x.FoodPlanId,
-                        principalTable: "Foodplan",
+                        name: "FK_UserSymptoms_Symptoms_symsonsId",
+                        column: x => x.symsonsId,
+                        principalTable: "Symptoms",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Vitamins",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    name = table.Column<int>(type: "int", nullable: false),
-                    FoodPlanId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Vitamins", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Vitamins_Foodplan_FoodPlanId",
-                        column: x => x.FoodPlanId,
-                        principalTable: "Foodplan",
+                        name: "FK_UserSymptoms_UserInfo_userIndoId",
+                        column: x => x.userIndoId,
+                        principalTable: "UserInfo",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -497,19 +544,14 @@ namespace Persistant.Migrations
                 column: "stateId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Food_FoodPlanId",
+                name: "IX_Food_foodplanId",
                 table: "Food",
-                column: "FoodPlanId");
+                column: "foodplanId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Foodplan_CategoryFoodPlanId",
                 table: "Foodplan",
                 column: "CategoryFoodPlanId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Foodplan_orderId",
-                table: "Foodplan",
-                column: "orderId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Foodplan_UserId",
@@ -522,24 +564,44 @@ namespace Persistant.Migrations
                 column: "userId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderItems_FoodplanId",
+                name: "IX_OrderItems_foodplanId",
                 table: "OrderItems",
+                column: "foodplanId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderItems_orderId",
+                table: "OrderItems",
+                column: "orderId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_userId",
+                table: "Orders",
+                column: "userId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Sickness_userInfoId",
+                table: "Sickness",
+                column: "userInfoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Spice_foodPlanId",
+                table: "Spice",
+                column: "foodPlanId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Symptoms_FoodplanId",
+                table: "Symptoms",
                 column: "FoodplanId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderItems_OrderId",
-                table: "OrderItems",
-                column: "OrderId");
+                name: "IX_Symptoms_SymptomsId",
+                table: "Symptoms",
+                column: "SymptomsId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_UserId",
-                table: "Orders",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Spice_FoodPlanId",
-                table: "Spice",
-                column: "FoodPlanId");
+                name: "IX_Symptoms_UserInfoId",
+                table: "Symptoms",
+                column: "UserInfoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserInfo_cityId",
@@ -553,9 +615,19 @@ namespace Persistant.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Vitamins_FoodPlanId",
+                name: "IX_UserSymptoms_symsonsId",
+                table: "UserSymptoms",
+                column: "symsonsId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserSymptoms_userIndoId",
+                table: "UserSymptoms",
+                column: "userIndoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Vitamins_foodPlanId",
                 table: "Vitamins",
-                column: "FoodPlanId");
+                column: "foodPlanId");
         }
 
         /// <inheritdoc />
@@ -592,10 +664,7 @@ namespace Persistant.Migrations
                 name: "Spice");
 
             migrationBuilder.DropTable(
-                name: "Symptoms");
-
-            migrationBuilder.DropTable(
-                name: "UserInfo");
+                name: "UserSymptoms");
 
             migrationBuilder.DropTable(
                 name: "Vitamins");
@@ -604,22 +673,28 @@ namespace Persistant.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "City");
+                name: "Orders");
+
+            migrationBuilder.DropTable(
+                name: "Symptoms");
 
             migrationBuilder.DropTable(
                 name: "Foodplan");
 
             migrationBuilder.DropTable(
-                name: "State");
-
-            migrationBuilder.DropTable(
-                name: "Orders");
+                name: "UserInfo");
 
             migrationBuilder.DropTable(
                 name: "categoryFoodPlans");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "City");
+
+            migrationBuilder.DropTable(
+                name: "State");
         }
     }
 }

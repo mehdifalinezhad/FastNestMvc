@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class State
+    public class Medicines
     {
         public int Id { get; set; }
-        public string Name {get; set;}
-        public ICollection<City> cites { get; set; }
+        public string name { get; set; }
     }
 }

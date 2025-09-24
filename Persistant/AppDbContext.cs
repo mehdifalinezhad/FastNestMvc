@@ -39,23 +39,7 @@ namespace persistant
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
             }
             //About selfRefrensing
-            builder.Entity<User>()
-       .HasMany(u => u.referres)   // هر بازاریاب می‌تونه چند مشتری داشته باشه
-       .WithOne(u => u.Referrer)            // هر مشتری یک معرف داره
-       .HasForeignKey(u => u.ReferrerId)    // کلید خارجی
-       .OnDelete(DeleteBehavior.Restrict);  // حذف معرف، مشتری‌ها رو پاک نکنه
-
-            //about OneToOne
-          builder.Entity<User>()
-         .HasOne(c => c.UserInfo)
-         .WithOne(ui => ui.user)
-         .HasForeignKey<UserInfo>(x => x.UserId)
-          .OnDelete(DeleteBehavior.Restrict);
-           
-            builder.Entity<UserInfo>()
-           .HasIndex(ui => ui.UserId)
-           .IsUnique();
-
+            builder.Entity<User>();
 
             base.OnModelCreating(builder);
             
@@ -64,7 +48,8 @@ namespace persistant
         }
         
         public DbSet<CategoryFoodPlan> categoryFoodPlans { get; set; } 
-        public DbSet<City> City { get; set; } 
+        public DbSet<City> City { get; set;} 
+        public DbSet<Medicines>Medicins { get; set;} 
        
         public DbSet<Food> Food { get; set; } 
         public DbSet<Foodplan> Foodplan { get; set; } 
@@ -77,6 +62,7 @@ namespace persistant
         public DbSet<Symptoms> Symptoms { get; set; } 
         public DbSet<UserInfo> UserInfo { get; set; } 
         public DbSet<Vitamins> Vitamins { get; set; } 
+        public DbSet<UserSymptoms> UserSymptoms { get; set; } 
  
    
 

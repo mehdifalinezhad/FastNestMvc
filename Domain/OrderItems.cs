@@ -9,9 +9,9 @@ namespace Domain
     public class OrderItems
     {
         public int Id { get; set; } 
-        public int OrderId { get; set; }
+       // public int OrderId { get; set; }
         public Orders? order { get; set; }
-        public int FoodplanId { get; set; }
+     //   public int FoodplanId { get; set; }
         public Foodplan? foodplan { get; set;}
         public int Count { get; set;}
       

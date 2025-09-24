@@ -9,11 +9,11 @@
   	// * Shamsi Date Picker *//
   	// ************************//
 
-	$('.shamsi-datepicker').datepicker({
-		dateFormat: "yy/mm/dd",
-		showOtherMonths: true,
-		selectOtherMonths: false
-	});
+	//$('.shamsi-datepicker').datepicker({
+	//	dateFormat: "yy/mm/dd",
+	//	showOtherMonths: true,
+	//	selectOtherMonths: false
+	//});
 
 	$('.shamsi-datepicker-list').datepicker({
 		dateFormat: "yy/mm/dd",

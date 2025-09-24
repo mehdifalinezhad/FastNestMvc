@@ -12,7 +12,7 @@ using persistant;
 namespace Persistant.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250917073031_start")]
+    [Migration("20250924093837_start")]
     partial class start
     {
         /// <inheritdoc />
@@ -71,7 +71,7 @@ namespace Persistant.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("FoodPlanId")
+                    b.Property<int>("foodplanId")
                         .HasColumnType("int");
 
                     b.Property<string>("name")
@@ -80,7 +80,7 @@ namespace Persistant.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FoodPlanId");
+                    b.HasIndex("foodplanId");
 
                     b.ToTable("Food");
                 });
@@ -105,16 +105,11 @@ namespace Persistant.Migrations
                     b.Property<Guid?>("UserId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("orderId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryFoodPlanId");
 
                     b.HasIndex("UserId");
-
-                    b.HasIndex("orderId");
 
                     b.ToTable("Foodplan");
                 });
@@ -154,17 +149,17 @@ namespace Persistant.Migrations
                     b.Property<int>("Count")
                         .HasColumnType("int");
 
-                    b.Property<int>("FoodplanId")
+                    b.Property<int?>("foodplanId")
                         .HasColumnType("int");
 
-                    b.Property<int>("OrderId")
+                    b.Property<int?>("orderId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FoodplanId");
+                    b.HasIndex("foodplanId");
 
-                    b.HasIndex("OrderId");
+                    b.HasIndex("orderId");
 
                     b.ToTable("OrderItems");
                 });
@@ -180,12 +175,12 @@ namespace Persistant.Migrations
                     b.Property<float>("TotalPrise")
                         .HasColumnType("real");
 
-                    b.Property<Guid>("UserId")
+                    b.Property<Guid>("userId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("userId");
 
                     b.ToTable("Orders");
                 });
@@ -230,7 +225,12 @@ namespace Persistant.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("userInfoId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("userInfoId");
 
                     b.ToTable("Sickness");
                 });
@@ -243,7 +243,7 @@ namespace Persistant.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("FoodPlanId")
+                    b.Property<int>("foodPlanId")
                         .HasColumnType("int");
 
                     b.Property<int>("name")
@@ -251,7 +251,7 @@ namespace Persistant.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FoodPlanId");
+                    b.HasIndex("foodPlanId");
 
                     b.ToTable("Spice");
                 });
@@ -280,10 +280,25 @@ namespace Persistant.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Discription")
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("FoodplanId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SymptomsId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UserInfoId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("FoodplanId");
+
+                    b.HasIndex("SymptomsId");
+
+                    b.HasIndex("UserInfoId");
 
                     b.ToTable("Symptoms");
                 });
@@ -430,7 +445,7 @@ namespace Persistant.Migrations
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("cityId")
+                    b.Property<int?>("cityId")
                         .HasColumnType("int");
 
                     b.Property<string>("dinnerMeal")
@@ -455,6 +470,29 @@ namespace Persistant.Migrations
                     b.ToTable("UserInfo");
                 });
 
+            modelBuilder.Entity("Domain.UserSymptoms", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("symsonsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("userIndoId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("symsonsId");
+
+                    b.HasIndex("userIndoId");
+
+                    b.ToTable("UserSymptoms");
+                });
+
             modelBuilder.Entity("Domain.Vitamins", b =>
                 {
                     b.Property<int>("Id")
@@ -463,7 +501,7 @@ namespace Persistant.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("FoodPlanId")
+                    b.Property<int>("foodPlanId")
                         .HasColumnType("int");
 
                     b.Property<int>("name")
@@ -471,7 +509,7 @@ namespace Persistant.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FoodPlanId");
+                    b.HasIndex("foodPlanId");
 
                     b.ToTable("Vitamins");
                 });
@@ -594,7 +632,7 @@ namespace Persistant.Migrations
                 {
                     b.HasOne("Domain.Foodplan", "foodplan")
                         .WithMany("foods")
-                        .HasForeignKey("FoodPlanId")
+                        .HasForeignKey("foodplanId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -614,16 +652,9 @@ namespace Persistant.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("Domain.Orders", "order")
-                        .WithMany()
-                        .HasForeignKey("orderId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
                     b.Navigation("CategoryFoodPlan");
 
                     b.Navigation("User");
-
-                    b.Navigation("order");
                 });
 
             modelBuilder.Entity("Domain.Opinion", b =>
@@ -640,15 +671,13 @@ namespace Persistant.Migrations
                 {
                     b.HasOne("Domain.Foodplan", "foodplan")
                         .WithMany("orderItems")
-                        .HasForeignKey("FoodplanId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("foodplanId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Domain.Orders", "order")
                         .WithMany("orderItems")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("orderId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("foodplan");
 
@@ -659,22 +688,51 @@ namespace Persistant.Migrations
                 {
                     b.HasOne("Domain.User", "user")
                         .WithMany("orders")
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("userId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("user");
                 });
 
+            modelBuilder.Entity("Domain.Sickness", b =>
+                {
+                    b.HasOne("Domain.UserInfo", "userInfo")
+                        .WithMany("sicKness")
+                        .HasForeignKey("userInfoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("userInfo");
+                });
+
             modelBuilder.Entity("Domain.Spice", b =>
                 {
                     b.HasOne("Domain.Foodplan", "foodPlan")
                         .WithMany("spices")
-                        .HasForeignKey("FoodPlanId")
+                        .HasForeignKey("foodPlanId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("foodPlan");
+                });
+
+            modelBuilder.Entity("Domain.Symptoms", b =>
+                {
+                    b.HasOne("Domain.Foodplan", null)
+                        .WithMany("Symptoms")
+                        .HasForeignKey("FoodplanId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Domain.Symptoms", null)
+                        .WithMany("Symptomss")
+                        .HasForeignKey("SymptomsId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Domain.UserInfo", null)
+                        .WithMany("Symsons")
+                        .HasForeignKey("UserInfoId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("Domain.User", b =>
@@ -699,19 +757,37 @@ namespace Persistant.Migrations
                     b.HasOne("Domain.City", "city")
                         .WithMany()
                         .HasForeignKey("cityId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("city");
 
                     b.Navigation("user");
                 });
 
+            modelBuilder.Entity("Domain.UserSymptoms", b =>
+                {
+                    b.HasOne("Domain.Symptoms", "symsons")
+                        .WithMany("userSymptoms")
+                        .HasForeignKey("symsonsId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Domain.UserInfo", "userIndo")
+                        .WithMany()
+                        .HasForeignKey("userIndoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("symsons");
+
+                    b.Navigation("userIndo");
+                });
+
             modelBuilder.Entity("Domain.Vitamins", b =>
                 {
                     b.HasOne("Domain.Foodplan", "foodPlan")
                         .WithMany("vitamins")
-                        .HasForeignKey("FoodPlanId")
+                        .HasForeignKey("foodPlanId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -776,6 +852,8 @@ namespace Persistant.Migrations
 
             modelBuilder.Entity("Domain.Foodplan", b =>
                 {
+                    b.Navigation("Symptoms");
+
                     b.Navigation("foods");
 
                     b.Navigation("orderItems");
@@ -795,6 +873,13 @@ namespace Persistant.Migrations
                     b.Navigation("cites");
                 });
 
+            modelBuilder.Entity("Domain.Symptoms", b =>
+                {
+                    b.Navigation("Symptomss");
+
+                    b.Navigation("userSymptoms");
+                });
+
             modelBuilder.Entity("Domain.User", b =>
                 {
                     b.Navigation("UserInfo")
@@ -807,6 +892,13 @@ namespace Persistant.Migrations
                     b.Navigation("orders");
 
                     b.Navigation("referres");
+                });
+
+            modelBuilder.Entity("Domain.UserInfo", b =>
+                {
+                    b.Navigation("Symsons");
+
+                    b.Navigation("sicKness");
                 });
 #pragma warning restore 612, 618
         }

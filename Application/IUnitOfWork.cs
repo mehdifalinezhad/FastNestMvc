@@ -6,7 +6,8 @@ namespace Application
     {
         
         IGenericRepository<Foodplan> footPlans{ get; set; }
-      //  IIndexGetData footPlans{ get; set; }
+        IGenericRepository<Symptoms> symptoms { get; set; }
+        IGenericRepository<State> states { get; set; }
        
         Task<int> SaveChangesAsync();
     }

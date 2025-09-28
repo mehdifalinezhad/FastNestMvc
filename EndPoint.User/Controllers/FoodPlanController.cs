@@ -35,8 +35,19 @@ namespace EndPoint.User.Controllers
 
             
             return View();
-        
-        
         }
+
+        public IActionResult CallGetCitys(int thestateId)
+        {
+
+            var cityRepo=_unitOfWork.getCityRepository;
+            List<City> cities = cityRepo.GetCitys(thestateId);
+
+            return Json(cities);
+        }
+
+
+
+
     }
 }

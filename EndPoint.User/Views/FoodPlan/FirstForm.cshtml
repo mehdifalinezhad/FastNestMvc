@@ -28,7 +28,9 @@
         </div>
         <div class="content-body">
             <!-- Basic Inputs start -->
-            <section id="basic-input">
+            <form method="post" asp-action="FirstForm" enctype="multipart/form-data">
+            <input type="hidden" asp-for="userId" />
+                <section id="basic-input">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
@@ -41,7 +43,7 @@
                                         <div class="col-md-6">
                                             <fieldset class="form-group">
                                                 <label for="basicInput">کدام دوره ثبت نام کردین؟</label>
-                                                <input type="text" class="form-control" id="basicInput" placeholder="دوره قبلی">
+                                                <input type="text" asp-for="DurationUsed" class="form-control" id="basicInput" placeholder="دوره قبلی">
                                             </fieldset>
 
                                             <fieldset class="form-group">
@@ -66,25 +68,25 @@
                                         <div class="col-md-6">
                                             <fieldset class="form-group">
                                                 <label for="disabledInput">نام و نام خانوادگی </label>
-                                                <input type="text" id="disabledInput" class="form-control" placeholder="نام و نام خانوادگی">
+                                                <input type="text" asp-for="FullName" id="disabledInput" class="form-control" placeholder="نام و نام خانوادگی">
 
                                             </fieldset>
                                             <fieldset class="form-group">
                                                 <label for="disabledInput">وزن</label>
-                                                <input type="text" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
+                                                <input type="text" class="touchspin" asp-for="weight" value="50" data-bts-step="0.5" data-bts-decimals="2">
                                             </fieldset>
 
                                             <fieldset class="form-group">
                                                 <label for="disabledInput">دوره شکم </label>
-                                                <input type="text" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
+                                                <input type="text" asp-for="AbdominalRound" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
                                             </fieldset>
                                             <fieldset class="form-group">
                                                 <label for="disabledInput">دوره ران </label>
-                                                <input type="text" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
+                                                <input type="text" asp-for="LegRound" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
                                             </fieldset>
                                             <fieldset class="form-group">
                                                 <label for="basicInput">دوره باسن</label>
-                                                <input type="text" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
+                                                <input type="text" asp-for="AssRound" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
                                             </fieldset>
 
                                         </div>
@@ -148,11 +150,10 @@
                                             </fieldset>
                                             <fieldset class="form-group">
                                                 <label for="basicInput">انتخاب استان</label>
-                                                <select type="text" asp-for="StateId" class="form-control" id="theState">
+                                                <select onchange="" asp-for="StateId" class="form-control" id="theState">
                                                     @foreach (var item in Model.states)
                                                     {
-                                                        <option value="item.Id">item.name</option>
-
+                                                        <option value="@item.Id">@item.Name</option>
                                                     }
                                                 </select>
                                             </fieldset>
@@ -170,16 +171,16 @@
                                                     <li class="d-inline-block mr-2 mb-1">
                                                         <fieldset>
                                                             <div class="custom-control custom-radio">
-                                                                <input type="radio" class="custom-control-input bg-primary" asp-for="Gender" value="1" id="GenderMale" checked>
-                                                                <label class="custom-control-label" for="customColorRadio1">مرد</label>
+                                                                <input type="radio" class="custom-control-input bg-primary" asp-for="gender" value="1" id="GenderMale">
+                                                                <label class="custom-control-label" for="GenderMale">مرد</label>
                                                             </div>
                                                         </fieldset>
                                                     </li>
                                                     <li class="d-inline-block mr-2 mb-1">
                                                         <fieldset>
                                                             <div class="custom-control custom-radio">
-                                                                <input type="radio" class="custom-control-input bg-secondary" asp-for="Gender" value="2" id="GenderFemale">
-                                                                <label class="custom-control-label" for="customColorRadio2">زن</label>
+                                                                <input type="radio" class="custom-control-input bg-secondary" asp-for="gender" value="2" id="GenderFemale">
+                                                                <label class="custom-control-label" for="GenderFemale">زن</label>
                                                             </div>
                                                         </fieldset>
                                                     </li>
@@ -187,7 +188,7 @@
                                             </fieldset>
                                             <fieldset class="form-group">
                                                 <label for="basicInput">سابقه بیماری </label>
-                                                <input type="text" class="form-control" id="basicInput" asp-for="Historysickness" placeholder="بیماره ها">
+                                                <input type="text" class="form-control" id="basicInput" asp-for="Historysickness" placeholder="بیماری ها">
                                             </fieldset>
 
                                             <fieldset class="form-group">
@@ -209,15 +210,19 @@
                                             </fieldset>
                                             <fieldset class="form-group">
                                                 <label for="basicInput">غذای مورد علاقه شما چیه؟</label>
-                                                <input type="text"asp-for="favoriteFood" class="form-control" id="basicInput" placeholder="غذای مورد علاقه">
+                                                <input type="text" asp-for="favoriteFood" class="form-control" id="basicInput" placeholder="غذای مورد علاقه">
                                             </fieldset>
                                             <fieldset class="form-group">
                                                 <label for="basicInput">تا حالا چه اقدام و روش هایی جهت  لاغری و تناسب اندام خود انجام داده اید؟</label>
-                                                <input type="text" class="form-control" id="basicInput" placeholder="اقدامات ">
+                                                <input type="text" class="form-control" asp-for="ActionSkiny" id="basicInput" placeholder="اقدامات ">
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label for="basicInput">فعالیت روزانه شما چیست؟</label>
+                                                <input type="text" asp-for="DailyActivity" class="form-control" id="basicInput" placeholder="فعالیت روزانه">
                                             </fieldset>
                                             <fieldset class="form-group">
                                                 <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox-input" id="checkbox1" checked="">
+                                                    <input type="checkbox" class="checkbox-input" id="checkbox1" >
                                                     <label for="checkbox1">تعهد نامه و (شرایط و ظوابط) را مصالعه کردم و قبول دارم:</label>
                                                 </div>
                                             </fieldset>
@@ -234,15 +239,17 @@
 
                                             <fieldset class="form-group">
                                                 <label for="basicInput">انتخاب شهر</label>
-                                                <select type="text" asp-for="CityId" class="form-control" id="basicInput">
-                                                    <option value="CityId"> ppppp</option>
-                                                    <option value="CityId"> ppppp</option>
-                                                    <option value="CityId"> ppppp</option>
-                                                    <option value="CityId"> ppppp</option>
+                                                <select type="text" asp-for="CityId" class="form-control" id="citySelect">
+                                                        @foreach (var item in Model.states)
+                                                        {
+                                                            
+                                                        <option value="@item.Id">@item.Name</option>
+                                                        }
                                                 </select>
-                                            </fieldset><fieldset class="form-group">
+                                            </fieldset>
+                                            <fieldset class="form-group">
                                                 <label for="disabledInput">معرف</label>
-                                                <input type="text" class="form-control" id="readonlyInput" value="معرف">
+                                                <input type="text" asp-for="ReferralName" class="form-control" id="readonlyInput" value="معرف">
                                             </fieldset>
 
                                             <fieldset class="form-group">
@@ -255,16 +262,16 @@
                                                     <li class="d-inline-block mr-2 mb-1">
                                                         <fieldset>
                                                             <div class="custom-control custom-radio">
-                                                                <input type="radio" class="custom-control-input bg-primary" asp-for="married" value="1" checked>
-                                                                <label class="custom-control-label" for="customColorRadio1">متاهل</label>
+                                                                <input type="radio" class="custom-control-input bg-primary" id="marrieRadio" asp-for="married" value="1">
+                                                                <label class="custom-control-label" for="marrieRadio">متاهل</label>
                                                             </div>
                                                         </fieldset>
                                                     </li>
                                                     <li class="d-inline-block mr-2 mb-1">
                                                         <fieldset>
                                                             <div class="custom-control custom-radio">
-                                                                <input type="radio" class="custom-control-input bg-secondary" asp-for="married" value="2">
-                                                                <label class="custom-control-label" for="customColorRadio2">مجرد</label>
+                                                                <input type="radio" class="custom-control-input bg-secondary" id="singleRadio" asp-for="married" value="2">
+                                                                <label class="custom-control-label" for="singleRadio">مجرد</label>
                                                             </div>
                                                         </fieldset>
                                                     </li>
@@ -280,9 +287,7 @@
                                             </fieldset>
 
                                             <fieldset class="form-group">
-
                                                 <label for="basicInput">کدام یک از نشانه های  زیر را دارید</label>
-
                                                 <select asp-for="SelectedSymptomIds" class="select2-size-lg form-control select2-hidden-accessible" multiple="" id="large-select-multi" data-select2-id="large-select-multi" tabindex="-1" aria-hidden="true">
                                                     @foreach (var item in Model.Symsons)
                                                     {
@@ -296,7 +301,7 @@
 
                                             <fieldset class="form-group">
                                                 <label for="basicInput">چه غذاهایی رو نمیتوانید بخورید؟</label>
-                                                <input type="text" asp-for="dislikeFood" class="form-control" id="basicInput" placeholder=" غذاهایی که حال نمیکنی">
+                                                <input type="text" asp-for="dislikeFood" class="form-control" id="basicInput" placeholder="غذاهایی که حال نمیکنی">
                                             </fieldset>
                                             <fieldset class="form-group">
                                                 <label for="basicInput">اغلب صبحانه چه چیزی وچه موقع میخورید؟ </label>
@@ -313,7 +318,7 @@
                                                 <label for="basicInput">اغلب نهار چیه چیزی و چه زمانی میخورید؟</label>
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <input type="text" asp-for="LaunchMeal" class="form-control" id="basicInput" placeholder="صبحانه ها">
+                                                        <input type="text" asp-for="LaunchMeal" class="form-control" id="basicInput" placeholder="نهارها">
                                                     </div>
                                                     <div class="col-md-6">
                                                         <input type="text" asp-for=LaunchTime" class="form-control pickatime" placeholder="انتخاب زمان">
@@ -331,11 +336,10 @@
                                                     </div>
                                                 </div>
                                             </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">فعالیت روزانه شما چیست؟</label>
-                                                <input type="text" asp-for="DailyActivity" class="form-control" id="basicInput" placeholder="فعالیت روزانه">
-                                            </fieldset>
-
+                                            
+                                                <fieldset class="form-group">
+                                                    <input type="Submit" class="btn btn-primary mb-2 d-flex align-items-center" value="درج اطلاعات">
+                                                </fieldset>
                                         </div>
                                     </div>
                                 </div>
@@ -344,6 +348,7 @@
                     </div>
                 </div>
             </section>
+            </form>
             <!-- Basic File Browser end -->
             <!-- Basic Inputs end -->
             <!-- Input Style start -->
@@ -358,21 +363,19 @@
 
 @section theDateTime {
 
-
-
     <script src="~/FrestAssets/js/scripts/forms/number-input.js"></script>
     <script src="~/FrestAssets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>
 }
-<script type="text/javascript">
-
-
-    $("#btnSave").click(function () {
+ <script type="text/javascript">
+    $(function getCity() {
+        var stateId=document.getElementById("#theState").value;
         $.ajax({
-            url: '/Home/SaveData',   // آدرس اکشن کنترلر
-            type: 'POST',            // یا GET
-            data: { id: 5, name: "Ali" }, // دیتاهایی که می‌فرستی
-            success: function (response) {
-                alert("موفقیت: " + response);
+            url: 'FoodPlan/CallGetCitys',
+            type: 'POST',          
+            data: { thestateId:stateId },
+            success:function (response){
+             
+            
             },
             error: function (xhr, status, error) {
                 console.error("خطا: " + error);
@@ -381,3 +384,23 @@
     });
 </script>
 
+
+
+@*  $.ajax({
+    url: '/FoodPlan/CallGetCitys',   
+    type: 'POST',          
+    data: { thestateId: stateId },
+    success: function(response) {
+        var citySelect = $("#CitySelect");
+        citySelect.empty();
+        $.each(response, function(i, city) {
+            citySelect.append($("<option>", {
+                value: city.Id,
+                text: city.Name
+            }));
+        });
+    },
+    error: function(xhr, status, error) {
+        console.error("خطا: " + error);
+    }
+}); *@

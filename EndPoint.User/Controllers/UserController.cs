@@ -36,8 +36,6 @@ namespace EndPoint.User.Controllers
         }
         public IActionResult Login()
         {
-
-
             return View(new LoginDto());
         }
         [HttpPost]

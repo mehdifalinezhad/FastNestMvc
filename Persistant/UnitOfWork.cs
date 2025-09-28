@@ -9,6 +9,7 @@ namespace Persistant
         public IGenericRepository<Foodplan> footPlans { get; set;}
         public IGenericRepository<Symptoms> symptoms { get; set; }
         public IGenericRepository<State> states { get; set; }
+        public IGetCityRepository getCityRepository { get; set; }
 
         public UnitOfWork(AppDbContext context)
         {
@@ -16,6 +17,7 @@ namespace Persistant
             footPlans = new GenericRepository<Foodplan>(_context);
             symptoms = new GenericRepository<Symptoms>(_context);
             states = new GenericRepository<State>(_context);
+            getCityRepository = new GetCityRepository(_context);
         }
 
        

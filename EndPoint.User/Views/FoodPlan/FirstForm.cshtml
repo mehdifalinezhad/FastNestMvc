@@ -28,7 +28,7 @@
         </div>
         <div class="content-body">
             <!-- Basic Inputs start -->
-            <form method="post" asp-action="FirstForm" enctype="multipart/form-data">
+            <form method="post" asp-controller="FoodPlan" asp-action="FirstForm" enctype="multipart/form-data">
             <input type="hidden" asp-for="userId" />
                 <section id="basic-input">
                 <div class="row">
@@ -150,13 +150,14 @@
                                             </fieldset>
                                             <fieldset class="form-group">
                                                 <label for="basicInput">انتخاب استان</label>
-                                                <select onchange="" asp-for="StateId" class="form-control" id="theState">
+                                                    <select onchange="getCity()" asp-for="StateId" class="form-control" id="theState">
                                                     @foreach (var item in Model.states)
                                                     {
                                                         <option value="@item.Id">@item.Name</option>
                                                     }
                                                 </select>
-                                            </fieldset>
+                                                    <span asp-validation-for="StateId" class="text-danger"></span>
+                                                </fieldset>
 
                                             <fieldset class="form-group position-relative has-icon-left">
                                                 <label for="theDate">تاریخ آغاز دوره </label>
@@ -238,13 +239,13 @@
                                             </fieldset>
 
                                             <fieldset class="form-group">
-                                                <label for="basicInput">انتخاب شهر</label>
-                                                <select type="text" asp-for="CityId" class="form-control" id="citySelect">
-                                                        @foreach (var item in Model.states)
+                                                    <label for="citySelect">انتخاب شهر</label>
+                                                <select asp-for="CityId" class="form-control" id="citySelect">
+                                                        @* @foreach (var item in Model.states)
                                                         {
                                                             
-                                                        <option value="@item.Id">@item.Name</option>
-                                                        }
+                                                         <option value="@item.Id">@item.Name</option> 
+                                                        }*@
                                                 </select>
                                             </fieldset>
                                             <fieldset class="form-group">
@@ -293,9 +294,6 @@
                                                     {
                                                         <option value="@item.Id" data-select2-id="@item.Id">@item.Description</option>
                                                     }
-
-                                                    @* <option value="rectangle" selected="" data-select2-id="107">مستطیل</option> *@
-
                                                 </select>
                                             </fieldset>
 
@@ -367,40 +365,23 @@
     <script src="~/FrestAssets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>
 }
  <script type="text/javascript">
-    $(function getCity() {
-        var stateId=document.getElementById("#theState").value;
+    function getCity() {
+        var stateId=document.getElementById("theState").value;
         $.ajax({
-            url: 'FoodPlan/CallGetCitys',
-            type: 'POST',          
+            url: '/FoodPlan/CallGetCitys',
+            type: 'get',       
             data: { thestateId:stateId },
             success:function (response){
-             
-            
+            var citysSelect=$("#citySelect");
+            citysSelect.empty();
+            $.each(response,function(i,city){
+                
+            citysSelect.append("<option value="+city.id+"'>"+city.name+"</option>")
+            })
             },
             error: function (xhr, status, error) {
-                console.error("خطا: " + error);
+                console.error("خطا در دریافت شهر ها" + error);
             }
         });
-    });
+    };
 </script>
-
-
-
-@*  $.ajax({
-    url: '/FoodPlan/CallGetCitys',   
-    type: 'POST',          
-    data: { thestateId: stateId },
-    success: function(response) {
-        var citySelect = $("#CitySelect");
-        citySelect.empty();
-        $.each(response, function(i, city) {
-            citySelect.append($("<option>", {
-                value: city.Id,
-                text: city.Name
-            }));
-        });
-    },
-    error: function(xhr, status, error) {
-        console.error("خطا: " + error);
-    }
-}); *@

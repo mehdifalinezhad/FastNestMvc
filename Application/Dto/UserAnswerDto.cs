@@ -52,10 +52,12 @@ namespace Application.Dto
         public string registerDate { get; set; }
         public Domain.Enums.Gender gender { get; set; }
         public Domain.Enums.Marrige married { get; set; }
-        public ICollection<City> cites { get; set; }
+        public List<City> cites { get; set; }
         public int StateId { get; set; }
         public int CityId { get; set; }
-        public ICollection<State> states { get; set; }
+        [Range(1, int.MaxValue, ErrorMessage = "لطفاً یک استان انتخاب کنید")]
+
+        public List<State> states { get; set; }
         public string? Historysickness { get; set; }
         public int? age { get; set;}
         public int? height { get; set; }

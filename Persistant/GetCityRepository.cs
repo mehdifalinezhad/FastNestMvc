@@ -25,7 +25,7 @@ namespace Persistant
         public List<City> GetCitys(int theStateId)
         {
             var cities = DbCity.Where(c => c.stateId == theStateId).ToList();
-        
+           
            return cities;
           
         }

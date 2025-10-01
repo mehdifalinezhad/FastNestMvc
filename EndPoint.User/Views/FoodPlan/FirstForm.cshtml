@@ -1,6 +1,7 @@
 ﻿@using Application.Dto
 @model UserAnswerDto
 
+
 <div class="app-content content">
     <div class="content-overlay"></div>
     <div class="content-wrapper">
@@ -29,359 +30,355 @@
         <div class="content-body">
             <!-- Basic Inputs start -->
             <form method="post" asp-controller="FoodPlan" asp-action="FirstForm" enctype="multipart/form-data">
-            <input type="hidden" asp-for="userId" />
+                <input type="hidden" asp-for="userId" />
                 <section id="basic-input">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">وارد کردن اطلاعات جهت دریافت برنامه غذایی</h4>
-                            </div>
-                            <div class="card-content">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">کدام دوره ثبت نام کردین؟</label>
-                                                <input type="text" asp-for="DurationUsed" class="form-control" id="basicInput" placeholder="دوره قبلی">
-                                            </fieldset>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">وارد کردن اطلاعات جهت دریافت برنامه غذایی</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <fieldset class="form-group">
+                                                    <label for="basicInput">کدام دوره ثبت نام کردین؟</label>
+                                                    <input type="text" asp-for="DurationUsed" class="form-control" id="basicInput" placeholder="دوره قبلی">
+                                                </fieldset>
 
-                                            <fieldset class="form-group">
-                                                <label for="helpInputTop"> سن</label>
-                                                <input type="number" asp-for="age" class="touchspin" value="50">
-                                            </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="helpInputTop"> سن</label>
+                                                    <input type="number" asp-for="age" class="touchspin" value="50">
+                                                </fieldset>
 
-                                            <fieldset class="form-group">
-                                                <label for="helperText">قد</label>
-                                                <input type="text" asp-for="height" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="helperText">دور بازو</label>
-                                                <input type="text" asp-for="ArmRound" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">دور ساق</label>
-                                                <input type="text" asp-for="LegRound" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
-                                            </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="helperText">قد</label>
+                                                    <input type="text" asp-for="height" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="helperText">دور بازو</label>
+                                                    <input type="text" asp-for="ArmRound" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="basicInput">دور ساق</label>
+                                                    <input type="text" asp-for="LegRound" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
+                                                </fieldset>
 
-                                        </div>
-                                        <div class="col-md-6">
-                                            <fieldset class="form-group">
-                                                <label for="disabledInput">نام و نام خانوادگی </label>
-                                                <input type="text" asp-for="FullName" id="disabledInput" class="form-control" placeholder="نام و نام خانوادگی">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <fieldset class="form-group">
+                                                    <label for="disabledInput">نام و نام خانوادگی </label>
+                                                    <input type="text" asp-for="FullName" id="disabledInput" class="form-control" placeholder="نام و نام خانوادگی">
 
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="disabledInput">وزن</label>
-                                                <input type="text" class="touchspin" asp-for="weight" value="50" data-bts-step="0.5" data-bts-decimals="2">
-                                            </fieldset>
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="disabledInput">وزن</label>
+                                                    <input type="text" class="touchspin" asp-for="weight" value="50" data-bts-step="0.5" data-bts-decimals="2">
+                                                </fieldset>
 
-                                            <fieldset class="form-group">
-                                                <label for="disabledInput">دوره شکم </label>
-                                                <input type="text" asp-for="AbdominalRound" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="disabledInput">دوره ران </label>
-                                                <input type="text" asp-for="LegRound" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">دوره باسن</label>
-                                                <input type="text" asp-for="AssRound" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
-                                            </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="disabledInput">دوره شکم </label>
+                                                    <input type="text" asp-for="AbdominalRound" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="disabledInput">دوره ران </label>
+                                                    <input type="text" asp-for="LegRound" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="basicInput">دوره باسن</label>
+                                                    <input type="text" asp-for="AssRound" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2">
+                                                </fieldset>
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <!-- Basic File Browser start -->
-            <section id="custom-file-input">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">آپلود نیم رخ </h4>
-                            </div>
-                            <div class="card-content">
-                                <div class="card-body">
-                                    <div class="row">
+                </section>
+                <!-- Basic File Browser start -->
+                <section id="custom-file-input">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">آپلود نیم رخ </h4>
 
-                                        <div class="col-md-12 mb-1">
-                                            <fieldset>
-                                                <div class="input-group">
-                                                    <div class="custom-file">
-                                                        <input type="file" class="custom-file-input" id="inputGroupFile02">
-                                                        <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">نیم رخ خود را آپلود کنید </label>
-                                                    </div>
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text" id="inputGroupFileAddon02">آپلود</span>
-                                                    </div>
-                                                </div>
-                                            </fieldset>
-                                        </div>
+                                </div>                             
+                                <div class="card-content">
+                                    <div class="card-body">
+
+                                        <input id="select-files" type="file" class="btn btn-primary mb-1"><i class="icon-file2"></i> <span>برای انتخاب فایل روی من کلیک کنید</span>
+                                            <div  class="dropzone dropzone-area"  id="dpz-btn-select-files">
+                                                <div class="dz-message">فایل های خود را برای ارسال به اینجا بکشید</div>
+                                            </div>
+                            
+                                   
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section id="Second-basic-input">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">ادامه وارد کردن اطلاعات جهت دریافت برنامه غذایی</h4>
-                            </div>
-                            <div class="card-content">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-6">
 
-                                            <fieldset class="form-group position-relative has-icon-left">
-                                                <label for="theDate">تاریخ تولد</label>
-                                                <input type="text" asp-for="BirthDay" id="theDate" class="form-control shamsi-datepicker-list" placeholder="انتخاب تاریخ">
-                                                @*  <div class="form-control-position">
-                                                    <i class="bx bx-calendar"></i>
-                                                </div> *@
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">انتخاب استان</label>
+                </section>
+                <section id="Second-basic-input">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">ادامه وارد کردن اطلاعات جهت دریافت برنامه غذایی</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+
+                                                <fieldset class="form-group position-relative has-icon-left">
+                                          
+                                                    <label for="theDate">تاریخ تولد</label>
+                                                    <input type="text" asp-for="BirthDay" id="theDate" class="form-control shamsi-datepicker-list" placeholder="انتخاب تاریخ">
+                                       
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="basicInput">انتخاب استان</label>
                                                     <select onchange="getCity()" asp-for="StateId" class="form-control" id="theState">
-                                                    @foreach (var item in Model.states)
-                                                    {
-                                                        <option value="@item.Id">@item.Name</option>
-                                                    }
-                                                </select>
+                                                        @foreach (var item in Model.states)
+                                                        {
+                                                            <option value="@item.Id">@item.Name</option>
+                                                        }
+                                                    </select>
                                                     <span asp-validation-for="StateId" class="text-danger"></span>
                                                 </fieldset>
 
-                                            <fieldset class="form-group position-relative has-icon-left">
-                                                <label for="theDate">تاریخ آغاز دوره </label>
-                                                <input type="text" asp-for="registerDate" id="theStartDate" class="form-control shamsi-datepicker-list" placeholder="انتخاب تاریخ">
-                                                @* <div class="form-control-position">
+                                                <fieldset class="form-group position-relative has-icon-left">
+                                                   
+                                                    <label for="daterangepicker">تاریخ آغاز دوره </label>
+                                                    <input type="text" asp-for="registerDate" id="daterangepicker" class="form-control shamsi-datepicker-list" placeholder="انتخاب تاریخ">
+                                                    @* <div class="form-control-position">
                                                     <i class="bx bx-calendar"></i>
                                                 </div> *@
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="helperText">جنسیت </label>
-                                                <ul class="list-unstyled mb-0">
-                                                    <li class="d-inline-block mr-2 mb-1">
-                                                        <fieldset>
-                                                            <div class="custom-control custom-radio">
-                                                                <input type="radio" class="custom-control-input bg-primary" asp-for="gender" value="1" id="GenderMale">
-                                                                <label class="custom-control-label" for="GenderMale">مرد</label>
-                                                            </div>
-                                                        </fieldset>
-                                                    </li>
-                                                    <li class="d-inline-block mr-2 mb-1">
-                                                        <fieldset>
-                                                            <div class="custom-control custom-radio">
-                                                                <input type="radio" class="custom-control-input bg-secondary" asp-for="gender" value="2" id="GenderFemale">
-                                                                <label class="custom-control-label" for="GenderFemale">زن</label>
-                                                            </div>
-                                                        </fieldset>
-                                                    </li>
-                                                </ul>
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">سابقه بیماری </label>
-                                                <input type="text" class="form-control" id="basicInput" asp-for="Historysickness" placeholder="بیماری ها">
-                                            </fieldset>
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="helperText">جنسیت </label>
+                                                    <ul class="list-unstyled mb-0">
+                                                        <li class="d-inline-block mr-2 mb-1">
+                                                            <fieldset>
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input bg-primary" asp-for="gender" value="1" id="GenderMale">
+                                                                    <label class="custom-control-label" for="GenderMale">مرد</label>
+                                                                </div>
+                                                            </fieldset>
+                                                        </li>
+                                                        <li class="d-inline-block mr-2 mb-1">
+                                                            <fieldset>
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input bg-secondary" asp-for="gender" value="2" id="GenderFemale">
+                                                                    <label class="custom-control-label" for="GenderFemale">زن</label>
+                                                                </div>
+                                                            </fieldset>
+                                                        </li>
+                                                    </ul>
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="basicInput">سابقه بیماری </label>
+                                                    <input type="text" class="form-control" id="basicInput" asp-for="Historysickness" placeholder="بیماری ها">
+                                                </fieldset>
 
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">ساعت بیداری صبح</label>
-                                                <input type="text" asp-for="wakeTime" id="theDate" class="form-control shamsi-datepicker-list" placeholder="انتخاب تاریخ">
+                                                <fieldset class="form-group">
+                                                    <label for="basicInput">ساعت بیداری صبح</label>
+                                                    <input type="text" asp-for="wakeTime" id="theDate" class="form-control shamsi-datepicker-list" placeholder="انتخاب تاریخ">
 
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">اغلب میان وعده صبح چه چیزی میخوردید</label>
-                                                <input type="text" asp-for="morningBetweenMeal" class="form-control" id="basicInput" placeholder="میان وعده ها">
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">اغلب عصرانه چی چیزی میخورید؟</label>
-                                                <input type="text" asp-for="EaveningMeal" class="form-control" id="basicInput" placeholder="عصر وعده ها">
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">اغلب وعده آخر شب چه چیری میخوردید؟</label>
-                                                <input type="text" asp-for="LastMeal" class="form-control" id="basicInput" placeholder="وعده آخر شب ها">
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">غذای مورد علاقه شما چیه؟</label>
-                                                <input type="text" asp-for="favoriteFood" class="form-control" id="basicInput" placeholder="غذای مورد علاقه">
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">تا حالا چه اقدام و روش هایی جهت  لاغری و تناسب اندام خود انجام داده اید؟</label>
-                                                <input type="text" class="form-control" asp-for="ActionSkiny" id="basicInput" placeholder="اقدامات ">
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">فعالیت روزانه شما چیست؟</label>
-                                                <input type="text" asp-for="DailyActivity" class="form-control" id="basicInput" placeholder="فعالیت روزانه">
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox-input" id="checkbox1" >
-                                                    <label for="checkbox1">تعهد نامه و (شرایط و ظوابط) را مصالعه کردم و قبول دارم:</label>
-                                                </div>
-                                            </fieldset>
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="basicInput">اغلب میان وعده صبح چه چیزی میخوردید</label>
+                                                    <input type="text" asp-for="morningBetweenMeal" class="form-control" id="basicInput" placeholder="میان وعده ها">
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="basicInput">اغلب عصرانه چی چیزی میخورید؟</label>
+                                                    <input type="text" asp-for="EaveningMeal" class="form-control" id="basicInput" placeholder="عصر وعده ها">
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="basicInput">اغلب وعده آخر شب چه چیری میخوردید؟</label>
+                                                    <input type="text" asp-for="LastMeal" class="form-control" id="basicInput" placeholder="وعده آخر شب ها">
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="basicInput">غذای مورد علاقه شما چیه؟</label>
+                                                    <input type="text" asp-for="favoriteFood" class="form-control" id="basicInput" placeholder="غذای مورد علاقه">
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="basicInput">تا حالا چه اقدام و روش هایی جهت  لاغری و تناسب اندام خود انجام داده اید؟</label>
+                                                    <input type="text" class="form-control" asp-for="ActionSkiny" id="basicInput" placeholder="اقدامات ">
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="basicInput">فعالیت روزانه شما چیست؟</label>
+                                                    <input type="text" asp-for="DailyActivity" class="form-control" id="basicInput" placeholder="فعالیت روزانه">
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" class="checkbox-input" id="checkbox1">
+                                                        <label for="checkbox1">تعهد نامه و (شرایط و ظوابط) را مصالعه کردم و قبول دارم:</label>
+                                                    </div>
+                                                </fieldset>
 
-                                        </div>
-                                        <div class="col-md-6">
+                                            </div>
+                                            <div class="col-md-6">
 
-                                            <fieldset class="form-group">
-                                                <label for="disabledInput">شغل</label>
-                                                <input type="text" id="disabledInput" asp-for="Job" class="form-control" placeholder="شغل">
+                                                <fieldset class="form-group">
+                                                    <label for="disabledInput">شغل</label>
+                                                    <input type="text" id="disabledInput" asp-for="Job" class="form-control" placeholder="شغل">
 
 
-                                            </fieldset>
-
-                                            <fieldset class="form-group">
+                                                </fieldset>
+                                                    
+                                                <fieldset class="form-group">
                                                     <label for="citySelect">انتخاب شهر</label>
-                                                <select asp-for="CityId" class="form-control" id="citySelect">
-                                                        @* @foreach (var item in Model.states)
+                                                    <select asp-for="CityId" class="form-control" id="citySelect">
+                                                    </select>
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="disabledInput">معرف</label>
+                                                    <input type="text" asp-for="ReferralName" class="form-control" id="readonlyInput" value="معرف">
+                                                </fieldset>
+
+                                                <fieldset class="form-group">
+                                                    <label for="disabledInput">شماره همراه </label>
+                                                    <input type="text" id="disabledInput" asp-for="PhoneNumber" class="form-control" placeholder="شغل">
+                                                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="helperText">وضعیت تاهل </label>
+                                                    <ul class="list-unstyled mb-0">
+                                                        <li class="d-inline-block mr-2 mb-1">
+                                                            <fieldset>
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input bg-primary" id="marrieRadio" asp-for="married" value="1">
+                                                                    <label class="custom-control-label" for="marrieRadio">متاهل</label>
+                                                                </div>
+                                                            </fieldset>
+                                                        </li>
+                                                        <li class="d-inline-block mr-2 mb-1">
+                                                            <fieldset>
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input bg-secondary" id="singleRadio" asp-for="married" value="2">
+                                                                    <label class="custom-control-label" for="singleRadio">مجرد</label>
+                                                                </div>
+                                                            </fieldset>
+                                                        </li>
+                                                    </ul>
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="medUse">چه دارویی مصرف میکنی و به چه دلیل:</label>
+                                                    <input type="text" class="form-control" id="medUse" asp-for="medicineUse" placeholder="دارو ها">
+                                                </fieldset>
+                                                <fieldset class="form-group position-relative has-icon-left">
+
+                                                    <label for="Sleepy">ساعات خواب شب   </label>
+                                                    <input type="text" asp-for="SleepTime" id="Sleepy" class="form-control shamsi-datepicker-list" placeholder="انتخاب تاریخ">
+                                                    @* <div class="form-control-position">
+                                                    <i class="bx bx-calendar"></i>
+                                                </div> *@
+                                                </fieldset>
+
+                                                <fieldset class="form-group">
+                                                    <label for="basicInput">کدام یک از نشانه های  زیر را دارید</label>
+                                                    <select asp-for="SelectedSymptomIds" class="select2-size-lg form-control select2-hidden-accessible" multiple id="large-select-multi" data-select2-id="large-select-multi" tabindex="-1" aria-hidden="true">
+                                                        @foreach (var item in Model.Symsons)
                                                         {
-                                                            
-                                                         <option value="@item.Id">@item.Name</option> 
-                                                        }*@
-                                                </select>
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="disabledInput">معرف</label>
-                                                <input type="text" asp-for="ReferralName" class="form-control" id="readonlyInput" value="معرف">
-                                            </fieldset>
+                                                            <option value="@item.Id" data-select2-id="@item.Id">@item.Description</option>
+                                                        }
+                                                    </select>
+                                                </fieldset>
 
-                                            <fieldset class="form-group">
-                                                <label for="disabledInput">شماره همراه </label>
-                                                <input type="text" id="disabledInput" asp-for="PhoneNumber" class="form-control" placeholder="شغل">
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="helperText">وضعیت تاهل </label>
-                                                <ul class="list-unstyled mb-0">
-                                                    <li class="d-inline-block mr-2 mb-1">
-                                                        <fieldset>
-                                                            <div class="custom-control custom-radio">
-                                                                <input type="radio" class="custom-control-input bg-primary" id="marrieRadio" asp-for="married" value="1">
-                                                                <label class="custom-control-label" for="marrieRadio">متاهل</label>
-                                                            </div>
-                                                        </fieldset>
-                                                    </li>
-                                                    <li class="d-inline-block mr-2 mb-1">
-                                                        <fieldset>
-                                                            <div class="custom-control custom-radio">
-                                                                <input type="radio" class="custom-control-input bg-secondary" id="singleRadio" asp-for="married" value="2">
-                                                                <label class="custom-control-label" for="singleRadio">مجرد</label>
-                                                            </div>
-                                                        </fieldset>
-                                                    </li>
-                                                </ul>
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">چه دارویی مصرف میکنی و به چه دلیل:</label>
-                                                <input type="text" class="form-control" id="basicInput" asp-for="medicineUse" placeholder="دارو ها">
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">ساعت خواب شب</label>
-                                                <input type="text" asp-for=SleepTime id="theDate" class="form-control shamsi-datepicker-list" placeholder="انتخاب تاریخ">
-                                            </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="basicInput">چه غذاهایی رو نمیتوانید بخورید؟</label>
+                                                    <input type="text" asp-for="dislikeFood" class="form-control" id="basicInput" placeholder="غذاهایی که حال نمیکنی">
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="basicInput">اغلب صبحانه چه چیزی و چه موقع میخورید؟ </label>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" id="basicInput" placeholder="صبحانه ها">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control pickatime" placeholder="انتخاب زمان">
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="basicInput">اغلب نهار چیه چیزی و چه زمانی میخورید؟</label>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <input type="text" asp-for="LaunchMeal" class="form-control" id="basicInput" placeholder="نهارها">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <input type="text" asp-for=LaunchTime" class="form-control pickatime" placeholder="انتخاب زمان">
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="basicInput">اغلب شام چه ساعتی و چه چیزی میخورید؟</label>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <input type="text" asp-for="dinnerMeal" class="form-control" id="basicInput" placeholder="شام ها">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <input type="text" asp-for="dinnerTime" class="form-control pickatime" placeholder="انتخاب زمان">
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
 
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">کدام یک از نشانه های  زیر را دارید</label>
-                                                <select asp-for="SelectedSymptomIds" class="select2-size-lg form-control select2-hidden-accessible" multiple="" id="large-select-multi" data-select2-id="large-select-multi" tabindex="-1" aria-hidden="true">
-                                                    @foreach (var item in Model.Symsons)
-                                                    {
-                                                        <option value="@item.Id" data-select2-id="@item.Id">@item.Description</option>
-                                                    }
-                                                </select>
-                                            </fieldset>
-
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">چه غذاهایی رو نمیتوانید بخورید؟</label>
-                                                <input type="text" asp-for="dislikeFood" class="form-control" id="basicInput" placeholder="غذاهایی که حال نمیکنی">
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">اغلب صبحانه چه چیزی وچه موقع میخورید؟ </label>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control" id="basicInput" placeholder="صبحانه ها">
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control pickatime" placeholder="انتخاب زمان">
-                                                    </div>
-                                                </div>
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">اغلب نهار چیه چیزی و چه زمانی میخورید؟</label>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <input type="text" asp-for="LaunchMeal" class="form-control" id="basicInput" placeholder="نهارها">
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <input type="text" asp-for=LaunchTime" class="form-control pickatime" placeholder="انتخاب زمان">
-                                                    </div>
-                                                </div>
-                                            </fieldset>
-                                            <fieldset class="form-group">
-                                                <label for="basicInput">اغلب شام چه ساعتی و چیه چیزی میخورید؟</label>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <input type="text" asp-for="dinnerMeal" class="form-control" id="basicInput" placeholder="شام ها">
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <input type="text" asp-for="dinnerTime" class="form-control pickatime" placeholder="انتخاب زمان">
-                                                    </div>
-                                                </div>
-                                            </fieldset>
-                                            
                                                 <fieldset class="form-group">
                                                     <input type="Submit" class="btn btn-primary mb-2 d-flex align-items-center" value="درج اطلاعات">
                                                 </fieldset>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
             </form>
             <!-- Basic File Browser end -->
             <!-- Basic Inputs end -->
             <!-- Input Style start -->
         </div>
     </div>
-</div>
+    </div>
+
 
 
 @section select2Js {
-    <script src="~/FrestAssets/js/scripts/forms/select/form-select2.js"></script>
+        <script src="~/FrestAssets/js/scripts/forms/select/form-select2.js"></script>
 }
 
 @section theDateTime {
 
-    <script src="~/FrestAssets/js/scripts/forms/number-input.js"></script>
-    <script src="~/FrestAssets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>
+        <script src="~/FrestAssets/js/scripts/forms/number-input.js"></script>
+        <script src="~/FrestAssets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>
+    <script src="~/FrestAssets/js/scripts/extensions/dropzone.js"></script>
+
+
 }
- <script type="text/javascript">
-    function getCity() {
-        var stateId=document.getElementById("theState").value;
-        $.ajax({
-            url: '/FoodPlan/CallGetCitys',
-            type: 'get',       
-            data: { thestateId:stateId },
-            success:function (response){
-            var citysSelect=$("#citySelect");
-            citysSelect.empty();
-            $.each(response,function(i,city){
-                
-            citysSelect.append("<option value="+city.id+"'>"+city.name+"</option>")
-            })
-            },
-            error: function (xhr, status, error) {
-                console.error("خطا در دریافت شهر ها" + error);
-            }
-        });
-    };
-</script>
+    <script type="text/javascript">
+        function getCity() {
+            var stateId=document.getElementById("theState").value;
+            $.ajax({
+                url: '/FoodPlan/CallGetCitys',
+                type: 'get',
+                data: { thestateId:stateId },
+                success:function (response){
+                var citysSelect=$("#citySelect");
+                citysSelect.empty();
+                $.each(response,function(i,city){
+                citysSelect.append("<option value='"+city.id+"'>"+city.name+"</option>")
+                })
+                },
+                error: function (xhr, status, error) {
+                    console.error("خطا در دریافت شهر ها" + error);
+                }
+            });
+        };
+    </script>

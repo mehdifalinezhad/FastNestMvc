@@ -2,10 +2,7 @@
 using Application.Dto;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Migrations.Operations;
-using System;
-using System.Collections.Generic;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
+
 
 namespace EndPoint.User.Controllers
 {
@@ -33,14 +30,22 @@ namespace EndPoint.User.Controllers
             return View(model);
         }
         [HttpPost]
-        public  IActionResult FirstForm(UserAnswerDto dto)
+        public async Task<IActionResult> FirstForm(UserAnswerDto dto)
         {
             if (!ModelState.IsValid)
             {
 
-            
+                var symsons = _unitOfWork.symptoms;
+                var states = _unitOfWork.states;
+                var AllSymptoms = await symsons.GetAllAsync();
+                var AllStats = await states.GetAllAsync();
 
-             return View(dto);           
+                dto.states = AllStats.ToList();
+                dto.Symsons = AllSymptoms.ToList();
+              
+                dto.states.Insert(0, new State() { Id = 0, Name = "استان را قبل از شهر انتخاب کنید" });
+
+                return View(dto);           
             }
             
             return View();
@@ -48,10 +53,8 @@ namespace EndPoint.User.Controllers
 
         public ActionResult CallGetCitys(int thestateId)
         {
-
             var cityRepo=_unitOfWork.getCityRepository;
             List<City> cities = cityRepo.GetCitys(thestateId);
-
             return Json(cities);
         }
 

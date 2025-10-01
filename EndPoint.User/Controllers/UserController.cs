@@ -39,19 +39,43 @@ namespace EndPoint.User.Controllers
             return View(new LoginDto());
         }
         [HttpPost]
-        public IActionResult Login(LoginDto loginDto)
+        public async Task<IActionResult> Login(LoginDto loginDto)
         {
             if (!ModelState.IsValid)
             {
                 return View(loginDto);
             }
+            var theUser=await _userManager.FindByNameAsync(loginDto.UserName);
+            if (theUser == null)
+            {
 
-            return View();
+                TempData["ToastType"] = "error";
+                TempData["ToastMessage"] = "شما اول باید ثبت نام کنید ";
+                return View(loginDto);
+
+            }
+            var checkPass = await _signInManager.PasswordSignInAsync(theUser,loginDto.Password,true,true);
+            if (!checkPass.Succeeded)
+            {
+                TempData["ToastType"] = "error";
+                TempData["ToastMessage"] = "رمز اشتباه است";
+                return View(loginDto);
+            }
+            HttpContext.Session.SetString("ActiveUser", theUser.Id.ToString());
+
+            TempData["ToastType"] = "success";
+            TempData["ToastMessage"] = "ورود با موفقیت انجام شد";
+            return RedirectToAction("Index","Home");
+
+
+              
+
         }
 
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
+            HttpContext.Session.Remove("UserId");
             return RedirectToAction(nameof(Login));
         }
 
@@ -78,6 +102,6 @@ namespace EndPoint.User.Controllers
         }
 
 
-
+       
     }
 }

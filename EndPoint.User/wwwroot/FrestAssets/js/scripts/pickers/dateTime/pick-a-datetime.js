@@ -14,7 +14,6 @@
 	//	showOtherMonths: true,
 	//	selectOtherMonths: false
 	//});
-
 	$('.shamsi-datepicker-list').datepicker({
 		dateFormat: "yy/mm/dd",
 		showOtherMonths: true,
@@ -437,11 +436,11 @@
 		opens: "left"
   	});
 
-  	// To remain picker opened after date range applied
-  	picker.data('daterangepicker').hide = function () {};
+  	//// To remain picker opened after date range applied
+  	//picker.data('daterangepicker').hide = function () {};
 
-  	// show picker on load
-  	picker.data('daterangepicker').show();
+  	//// show picker on load
+  	//picker.data('daterangepicker').show();
 
 
   })(window, document, jQuery);

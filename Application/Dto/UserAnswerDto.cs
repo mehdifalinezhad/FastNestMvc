@@ -1,10 +1,9 @@
 ﻿using Domain;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Application.Dto
 {
@@ -16,8 +15,6 @@ namespace Application.Dto
         public string? LastName { get; set; }
         [Required(ErrorMessage = "نام و نام خانوادگی الزامی است ")]
         public string? FullName{ get; set; }
-   
-
         [Required(ErrorMessage = "شماره موبایل الزامی است")]
         [RegularExpression(@"^09\d{9}$", ErrorMessage = "فرمت شماره موبایل معتبر نیست")]
         public string PhoneNumber { get; set; }
@@ -29,13 +26,13 @@ namespace Application.Dto
         public decimal? ThighRound { get; set; }
         public decimal? LegRound { get; set; }
         public decimal? AssRound { get; set; }
-        public string? ImageUrls { get; set; }
+        public List<IFormFile> ImageFiles { get; set; }
         public bool? Deal { get; set; }
         //public bool HairLose { get; set;}  ====>this for symsone
         public int? wakeTime { get; set; }
         public int? SleepTime { get; set; }
-        public string? BreakfastMeal { get; set; }
-        public string? morningBetweenMeal { get; set; }
+        public string? BreakfastMeal { get; set;}
+        public string? morningBetweenMeal {get;set;}
         public string? LaunchMeal { get; set; }
         public string? LaunchTime { get; set; }
         public string? dinnerMeal { get; set; }
@@ -53,9 +50,9 @@ namespace Application.Dto
         public Domain.Enums.Gender gender { get; set; }
         public Domain.Enums.Marrige married { get; set; }
         public List<City> cites { get; set; }
+        [Range(1, int.MaxValue, ErrorMessage = "لطفاً یک استان انتخاب کنید")]
         public int StateId { get; set; }
         public int CityId { get; set; }
-        [Range(1, int.MaxValue, ErrorMessage = "لطفاً یک استان انتخاب کنید")]
 
         public List<State> states { get; set; }
         public string? Historysickness { get; set; }
@@ -69,9 +66,6 @@ namespace Application.Dto
         public string? ReferralName { get; set; }
         public Guid userId { get; set; }
         public string? DurationUsed { get; set; }
-        
-        
-        
         public UserAnswerDto()
         {
             cites = new List<City>();

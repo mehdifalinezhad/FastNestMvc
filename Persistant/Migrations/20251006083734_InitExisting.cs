@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Persistant.Migrations
 {
     /// <inheritdoc />
-    public partial class start : Migration
+    public partial class InitExisting : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -30,10 +30,10 @@ namespace Persistant.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ReferrerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ReferrerId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -74,12 +74,25 @@ namespace Persistant.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Sickness",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sickness", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "State",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<int>(type: "int", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -288,14 +301,14 @@ namespace Persistant.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    foodplanId = table.Column<int>(type: "int", nullable: false)
+                    FoodPlanId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Food", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Food_Foodplan_foodplanId",
-                        column: x => x.foodplanId,
+                        name: "FK_Food_Foodplan_FoodPlanId",
+                        column: x => x.FoodPlanId,
                         principalTable: "Foodplan",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -309,7 +322,7 @@ namespace Persistant.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     orderId = table.Column<int>(type: "int", nullable: true),
                     foodplanId = table.Column<int>(type: "int", nullable: true),
-                    Count = table.Column<int>(type: "int", nullable: false)
+                    price = table.Column<decimal>(type: "decimal(18,2)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -349,6 +362,26 @@ namespace Persistant.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Symptoms",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FoodplanId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Symptoms", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Symptoms_Foodplan_FoodplanId",
+                        column: x => x.FoodplanId,
+                        principalTable: "Foodplan",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Vitamins",
                 columns: table => new
                 {
@@ -375,27 +408,42 @@ namespace Persistant.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    AbdominalRound = table.Column<int>(type: "int", nullable: true),
-                    ArmRound = table.Column<int>(type: "int", nullable: true),
-                    ThighRound = table.Column<int>(type: "int", nullable: true),
-                    LegRound = table.Column<int>(type: "int", nullable: true),
-                    AssRound = table.Column<int>(type: "int", nullable: true),
                     ImageUrls = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    married = table.Column<bool>(type: "bit", nullable: true),
+                    gender = table.Column<int>(type: "int", nullable: false),
+                    marrige = table.Column<int>(type: "int", nullable: false),
+                    LastMeal = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FavoritFood = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ActionSkiny = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CityId = table.Column<int>(type: "int", nullable: false),
+                    AbdominalRound = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    ArmRound = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    ThighRound = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    LegRound = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    AssRound = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    ImageFiles = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Deal = table.Column<bool>(type: "bit", nullable: true),
                     wakeTime = table.Column<int>(type: "int", nullable: true),
                     SleepTime = table.Column<int>(type: "int", nullable: true),
                     BreakfastMeal = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    morningBetweenMeal = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LaunchMeal = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LaunchTime = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     dinnerMeal = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     dinnerTime = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EaveningMeal = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastMeal = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Job = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ActionSkiny = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DailyActivity = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    cityId = table.Column<int>(type: "int", nullable: true)
+                    BirthDay = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    registerDate = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Historysickness = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    age = table.Column<int>(type: "int", nullable: true),
+                    height = table.Column<int>(type: "int", nullable: true),
+                    weight = table.Column<int>(type: "int", nullable: true),
+                    dislikeFood = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    medicineUse = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    favoriteFood = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ReferralName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DurationUsed = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -407,61 +455,27 @@ namespace Persistant.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_UserInfo_City_cityId",
-                        column: x => x.cityId,
+                        name: "FK_UserInfo_City_CityId",
+                        column: x => x.CityId,
                         principalTable: "City",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Sickness",
+                name: "Medicins",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    userInfoId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Sickness", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Sickness_UserInfo_userInfoId",
-                        column: x => x.userInfoId,
-                        principalTable: "UserInfo",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Symptoms",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FoodplanId = table.Column<int>(type: "int", nullable: true),
-                    SymptomsId = table.Column<int>(type: "int", nullable: true),
                     UserInfoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Symptoms", x => x.Id);
+                    table.PrimaryKey("PK_Medicins", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Symptoms_Foodplan_FoodplanId",
-                        column: x => x.FoodplanId,
-                        principalTable: "Foodplan",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Symptoms_Symptoms_SymptomsId",
-                        column: x => x.SymptomsId,
-                        principalTable: "Symptoms",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Symptoms_UserInfo_UserInfoId",
+                        name: "FK_Medicins_UserInfo_UserInfoId",
                         column: x => x.UserInfoId,
                         principalTable: "UserInfo",
                         principalColumn: "Id",
@@ -469,26 +483,48 @@ namespace Persistant.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserSymptoms",
+                name: "SicknessUserInfo",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    userIndoId = table.Column<int>(type: "int", nullable: false),
-                    symsonsId = table.Column<int>(type: "int", nullable: false)
+                    sicKnessId = table.Column<int>(type: "int", nullable: false),
+                    userInfosId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserSymptoms", x => x.Id);
+                    table.PrimaryKey("PK_SicknessUserInfo", x => new { x.sicKnessId, x.userInfosId });
                     table.ForeignKey(
-                        name: "FK_UserSymptoms_Symptoms_symsonsId",
-                        column: x => x.symsonsId,
+                        name: "FK_SicknessUserInfo_Sickness_sicKnessId",
+                        column: x => x.sicKnessId,
+                        principalTable: "Sickness",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_SicknessUserInfo_UserInfo_userInfosId",
+                        column: x => x.userInfosId,
+                        principalTable: "UserInfo",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SymptomsUserInfo",
+                columns: table => new
+                {
+                    SymsomsId = table.Column<int>(type: "int", nullable: false),
+                    userInfosId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SymptomsUserInfo", x => new { x.SymsomsId, x.userInfosId });
+                    table.ForeignKey(
+                        name: "FK_SymptomsUserInfo_Symptoms_SymsomsId",
+                        column: x => x.SymsomsId,
                         principalTable: "Symptoms",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_UserSymptoms_UserInfo_userIndoId",
-                        column: x => x.userIndoId,
+                        name: "FK_SymptomsUserInfo_UserInfo_userInfosId",
+                        column: x => x.userInfosId,
                         principalTable: "UserInfo",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -544,9 +580,9 @@ namespace Persistant.Migrations
                 column: "stateId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Food_foodplanId",
+                name: "IX_Food_FoodPlanId",
                 table: "Food",
-                column: "foodplanId");
+                column: "FoodPlanId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Foodplan_CategoryFoodPlanId",
@@ -557,6 +593,11 @@ namespace Persistant.Migrations
                 name: "IX_Foodplan_UserId",
                 table: "Foodplan",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Medicins_UserInfoId",
+                table: "Medicins",
+                column: "UserInfoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Opinion_userId",
@@ -579,9 +620,9 @@ namespace Persistant.Migrations
                 column: "userId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Sickness_userInfoId",
-                table: "Sickness",
-                column: "userInfoId");
+                name: "IX_SicknessUserInfo_userInfosId",
+                table: "SicknessUserInfo",
+                column: "userInfosId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Spice_foodPlanId",
@@ -594,35 +635,20 @@ namespace Persistant.Migrations
                 column: "FoodplanId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Symptoms_SymptomsId",
-                table: "Symptoms",
-                column: "SymptomsId");
+                name: "IX_SymptomsUserInfo_userInfosId",
+                table: "SymptomsUserInfo",
+                column: "userInfosId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Symptoms_UserInfoId",
-                table: "Symptoms",
-                column: "UserInfoId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserInfo_cityId",
+                name: "IX_UserInfo_CityId",
                 table: "UserInfo",
-                column: "cityId");
+                column: "CityId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserInfo_UserId",
                 table: "UserInfo",
                 column: "UserId",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserSymptoms_symsonsId",
-                table: "UserSymptoms",
-                column: "symsonsId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserSymptoms_userIndoId",
-                table: "UserSymptoms",
-                column: "userIndoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Vitamins_foodPlanId",
@@ -652,19 +678,22 @@ namespace Persistant.Migrations
                 name: "Food");
 
             migrationBuilder.DropTable(
+                name: "Medicins");
+
+            migrationBuilder.DropTable(
                 name: "Opinion");
 
             migrationBuilder.DropTable(
                 name: "OrderItems");
 
             migrationBuilder.DropTable(
-                name: "Sickness");
+                name: "SicknessUserInfo");
 
             migrationBuilder.DropTable(
                 name: "Spice");
 
             migrationBuilder.DropTable(
-                name: "UserSymptoms");
+                name: "SymptomsUserInfo");
 
             migrationBuilder.DropTable(
                 name: "Vitamins");
@@ -676,22 +705,25 @@ namespace Persistant.Migrations
                 name: "Orders");
 
             migrationBuilder.DropTable(
-                name: "Symptoms");
+                name: "Sickness");
 
             migrationBuilder.DropTable(
-                name: "Foodplan");
+                name: "Symptoms");
 
             migrationBuilder.DropTable(
                 name: "UserInfo");
 
             migrationBuilder.DropTable(
-                name: "categoryFoodPlans");
+                name: "Foodplan");
+
+            migrationBuilder.DropTable(
+                name: "City");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "City");
+                name: "categoryFoodPlans");
 
             migrationBuilder.DropTable(
                 name: "State");

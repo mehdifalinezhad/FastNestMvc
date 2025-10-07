@@ -1,5 +1,7 @@
 using Application;
+using CommonJust;
 using Domain;
+using IPE.SmsIrClient.Models.Results;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
@@ -50,7 +52,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/auth/signin";
 });
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
-
+builder.Services.AddScoped<ISendSms<SmsIrResult<SendResult>>, SendSms>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>

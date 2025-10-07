@@ -138,6 +138,10 @@
             "Microsoft.Extensions.FileProviders.Physical": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
             }
           },
           "imports": [
@@ -286,6 +290,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "IPE.SmsIR": {
+              "target": "Package",
+              "version": "[1.2.7, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.19, )"

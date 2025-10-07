@@ -8,6 +8,7 @@ namespace Domain
        // public Guid UserId { get; set; }    
         public User user { get; set; }
         public ICollection<OrderItems> orderItems { get; set; }    
-        public float TotalPrise { get; set; }   
+        public decimal TotalPrise { get; set; }   
+
     }
 }

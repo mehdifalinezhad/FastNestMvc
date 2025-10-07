@@ -1,7 +1,10 @@
-﻿using Application.Dto;
+﻿using Application;
+using Application.Dto;
 using Azure.Core.Extensions;
+using CommonJust;
 using Domain;
 using EndPoint.User.Utilities;
+using IPE.SmsIrClient.Models.Results;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -13,12 +16,14 @@ namespace EndPoint.User.Controllers
         private readonly UserManager<Domain.User> _userManager;
         private readonly RoleManager<Role> _roleManager;
         private readonly SignInManager<Domain.User> _signInManager;
+        private readonly ISendSms<SmsIrResult<SendResult>> iSendSms;
 
-        public UserController(UserManager<Domain.User> userManager, RoleManager<Role> roleManager, SignInManager<Domain.User> signInManager)
+        public UserController(UserManager<Domain.User> userManager, RoleManager<Role> roleManager, SignInManager<Domain.User> signInManager, ISendSms<SmsIrResult<SendResult>> iSendSms)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
+            this.iSendSms = iSendSms;
         }
         public async Task<IActionResult> StartDb()
         {
@@ -67,13 +72,11 @@ namespace EndPoint.User.Controllers
             TempData["ToastMessage"] = "ورود با موفقیت انجام شد";
             return RedirectToAction("Index","Home");
 
-
-              
-
         }
 
         public async Task<IActionResult> Logout()
         {
+            //HttpContext.Session.GetString("ActiveUser");
             await _signInManager.SignOutAsync();
             HttpContext.Session.Remove("UserId");
             return RedirectToAction(nameof(Login));
@@ -86,22 +89,29 @@ namespace EndPoint.User.Controllers
         [HttpPost]
         public async Task<IActionResult> AddUser(UserDto userDto)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) 
             {
                 return View(userDto);
-            }
+            } 
+          
+        //Task<SmsIrResult<SendResult>> ResultSend= iSendSms.DoSmS(09174148071,"کد ارسال براس شما ارسال شده است",);
 
             Domain.User userToAdd = DtosToModels.AddUserDtoToModel(userDto);
 
             var result = await _userManager.CreateAsync(userToAdd, userToAdd.Password);
+
+            if (!result.Succeeded)
+            {
+                TempData["ToastType"] = "error";
+                TempData["ToastMessage"] = "ناتوان در درج کاربر ";
+                return View(userDto);
+            }
             var AddedRole = await _userManager.AddToRoleAsync(userToAdd, "Customer");
-            //notishow.Add("مثلا ثبت نام شما با موفقیت انجام شد"); 
-            //این رو واس بنویسم یا نه؟
-            return View(userDto);
-
+                TempData["ToastType"] = "success";
+                TempData["ToastMessage"] = "ثبت نام با موفقیت انجام شذ";
+                return RedirectToAction("Login", "User");
+               
         }
-
-
        
     }
 }

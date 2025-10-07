@@ -1,7 +1,5 @@
 ﻿@using Application.Dto
 @model UserAnswerDto
-
-
 <div class="app-content content">
     <div class="content-overlay"></div>
     <div class="content-wrapper">
@@ -30,7 +28,7 @@
         <div class="content-body">
             <!-- Basic Inputs start -->
             <form method="post" asp-controller="FoodPlan" asp-action="FirstForm" enctype="multipart/form-data">
-                <input type="hidden" asp-for="userId" />
+                <input type="hidden" asp-for="UserId" />
                 <section id="basic-input">
                     <div class="row">
                         <div class="col-md-12">
@@ -43,8 +41,8 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <fieldset class="form-group">
-                                                    <label for="basicInput">کدام دوره ثبت نام کردین؟</label>
-                                                    <input type="text" asp-for="DurationUsed" class="form-control" id="basicInput" placeholder="دوره قبلی">
+                                                    <label for="course">کدام دوره ثبت نام کردین؟</label>
+                                                    <input type="text" asp-for="DurationUsed" class="form-control" id="course" placeholder="دوره قبلی">
                                                 </fieldset>
 
                                                 <fieldset class="form-group">
@@ -110,7 +108,7 @@
                                 <div class="card-content">
                                     <div class="card-body">
 
-                                        <input id="select-files" type="file" class="btn btn-primary mb-1"><i class="icon-file2"></i> <span>برای انتخاب فایل روی من کلیک کنید</span>
+                                        <input id="select-files" type="file" class="btn btn-primary mb-1"/><i class="icon-file2"></i> <span>برای انتخاب فایل روی من کلیک کنید</span>
                                             <div  class="dropzone dropzone-area"  id="dpz-btn-select-files">
                                                 <div class="dz-message">فایل های خود را برای ارسال به اینجا بکشید</div>
                                             </div>
@@ -187,8 +185,8 @@
                                                 </fieldset>
 
                                                 <fieldset class="form-group">
-                                                    <label for="basicInput">ساعت بیداری صبح</label>
-                                                    <input type="text" asp-for="wakeTime" id="theDate" class="form-control shamsi-datepicker-list" placeholder="انتخاب تاریخ">
+                                                    <label for="Waky">ساعت بیداری صبح</label>
+                                                    <input type="text" asp-for="wakeTime" id="Waky" class="form-control pickatime" placeholder="انتخاب زمان">
 
                                                 </fieldset>
                                                 <fieldset class="form-group">
@@ -275,14 +273,15 @@
                                                 <fieldset class="form-group position-relative has-icon-left">
 
                                                     <label for="Sleepy">ساعات خواب شب   </label>
-                                                    <input type="text" asp-for="SleepTime" id="Sleepy" class="form-control shamsi-datepicker-list" placeholder="انتخاب تاریخ">
+                                                    <input type="text" asp-for="SleepTime" id="Sleepy" class="form-control pickatime" placeholder="انتخاب زمان">
+
                                                     @* <div class="form-control-position">
                                                     <i class="bx bx-calendar"></i>
                                                 </div> *@
                                                 </fieldset>
 
                                                 <fieldset class="form-group">
-                                                    <label for="basicInput">کدام یک از نشانه های  زیر را دارید</label>
+                                                    <label for="large-select-multi">کدام یک از نشانه های  زیر را دارید</label>
                                                     <select asp-for="SelectedSymptomIds" class="select2-size-lg form-control select2-hidden-accessible" multiple id="large-select-multi" data-select2-id="large-select-multi" tabindex="-1" aria-hidden="true">
                                                         @foreach (var item in Model.Symsons)
                                                         {
@@ -307,10 +306,10 @@
                                                     </div>
                                                 </fieldset>
                                                 <fieldset class="form-group">
-                                                    <label for="basicInput">اغلب نهار چیه چیزی و چه زمانی میخورید؟</label>
+                                                    <label for="launch">اغلب نهار چیه چیزی و چه زمانی میخورید؟</label>
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <input type="text" asp-for="LaunchMeal" class="form-control" id="basicInput" placeholder="نهارها">
+                                                            <input type="text" asp-for="LaunchMeal" class="form-control" id="launch" placeholder="نهارها">
                                                         </div>
                                                         <div class="col-md-6">
                                                             <input type="text" asp-for=LaunchTime" class="form-control pickatime" placeholder="انتخاب زمان">
@@ -318,10 +317,10 @@
                                                     </div>
                                                 </fieldset>
                                                 <fieldset class="form-group">
-                                                    <label for="basicInput">اغلب شام چه ساعتی و چه چیزی میخورید؟</label>
+                                                    <label for="dinner">اغلب شام چه ساعتی و چه چیزی میخورید؟</label>
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <input type="text" asp-for="dinnerMeal" class="form-control" id="basicInput" placeholder="شام ها">
+                                                            <input type="text" asp-for="dinnerMeal" class="form-control" id="dinner" placeholder="شام ها">
                                                         </div>
                                                         <div class="col-md-6">
                                                             <input type="text" asp-for="dinnerTime" class="form-control pickatime" placeholder="انتخاب زمان">

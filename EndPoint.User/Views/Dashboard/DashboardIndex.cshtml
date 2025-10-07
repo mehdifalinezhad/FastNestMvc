@@ -1,0 +1,2334 @@
+﻿@using Application.Dto
+@model DashBoardDto
+<div class="app-content content">
+      <div class="content-overlay"></div>
+      <div class="content-wrapper">
+        <div class="content-header row">
+          <div class="content-header-left col-12 mb-2 mt-1">
+            <div class="row breadcrumbs-top">
+              <div class="col-12">
+                <h5 class="content-header-title float-left pr-1">ویجت‌ها</h5>
+                <div class="breadcrumb-wrapper">
+                  <ol class="breadcrumb p-0 mb-0">
+                    <li class="breadcrumb-item"><a href="index.html"><i class="bx bx-home-alt"></i></a>
+                    </li>
+                    <li class="breadcrumb-item active">ویجت‌ها
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-body"><!-- Widgets Statistics start -->
+<section id="widgets-Statistics">
+  <div class="row">
+    <div class="col-12 mt-1 mb-2">
+      <h4>آمار</h4>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-2 col-md-4 col-sm-6">
+      <div class="card text-center">
+        <div class="card-content">
+          <div class="card-body">
+            <div class="badge-circle badge-circle-lg bg-rgba-info text-info mx-auto my-1">
+              <i class="bx bx-edit-alt font-medium-5"></i>
+            </div>
+            <p class="text-muted mb-0 line-ellipsis">پست های جدید</p>
+            <h2 class="mb-0 primary-font">48</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-2 col-md-4 col-sm-6">
+      <div class="card text-center">
+        <div class="card-content">
+          <div class="card-body">
+            <div class="badge-circle badge-circle-lg bg-rgba-warning text-warning mx-auto my-1">
+              <i class="bx bx-file font-medium-5"></i>
+            </div>
+            <p class="text-muted mb-0 line-ellipsis">فایل های ضمیمه شده</p>
+            <h2 class="mb-0 primary-font">17</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-2 col-md-4 col-sm-6">
+      <div class="card text-center">
+        <div class="card-content">
+          <div class="card-body">
+            <div class="badge-circle badge-circle-lg bg-rgba-danger text-danger mx-auto my-1">
+              <i class="bx bx-message font-medium-5"></i>
+            </div>
+            <p class="text-muted mb-0 line-ellipsis">دیدگاه‌ها</p>
+            <h2 class="mb-0 primary-font">29</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-2 col-md-4 col-sm-6">
+      <div class="card text-center">
+        <div class="card-content">
+          <div class="card-body">
+            <div class="badge-circle badge-circle-lg bg-rgba-primary text-primary mx-auto my-1">
+              <i class="bx bx-money font-medium-5"></i>
+            </div>
+            <p class="text-muted mb-0 line-ellipsis">فروش‌ها</p>
+            <h2 class="mb-0 primary-font">72</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-2 col-md-4 col-sm-6">
+      <div class="card text-center">
+        <div class="card-content">
+          <div class="card-body">
+            <div class="badge-circle badge-circle-lg bg-rgba-success text-success mx-auto my-1">
+              <i class="bx bx-purchase-tag font-medium-5"></i>
+            </div>
+            <p class="text-muted mb-0 line-ellipsis">خرید</p>
+            <h2 class="mb-0 primary-font">65</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-2 col-md-4 col-sm-6">
+      <div class="card text-center">
+        <div class="card-content">
+          <div class="card-body">
+            <div class="badge-circle badge-circle-lg bg-rgba-danger text-danger mx-auto my-1">
+              <i class="bx bx-shopping-bag font-medium-5"></i>
+            </div>
+            <p class="text-muted mb-0 line-ellipsis">سفارش</p>
+            <h2 class="mb-0 primary-font">40</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Widgets Statistics End -->
+
+<!-- Widgets Advance start -->
+<section id="widgets-advance">
+  <div class="row">
+    <div class="col-12 mt-1 mb-2">
+      <h4>پیشرفته</h4>
+      <hr>
+    </div>
+  </div>
+  <div class="row widgets-text-chart">
+    <!-- Notification Widget Starts -->
+    <div class="col-lg-5">
+      <div class="card widget-notification">
+        <div class="card-header border-bottom">
+          <h4 class="card-title d-flex align-items-center">
+            <i class="bx bx-bell font-medium-4 mr-1"></i>اعلان ها</h4>
+          <div class="heading-elements">
+            <button type="button" class="btn btn-sm btn-light-primary">خواندن همه</button>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-body p-0">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item list-group-item-action border-0 d-flex align-items-center justify-content-between">
+                <div class="list-left d-flex align-items-center">
+                  <div class="list-icon mr-1">
+                    <div class="avatar bg-rgba-primary m-0 p-25">
+                      <div class="avatar-content">
+                        <i class="bx bx-edit-alt text-primary font-medium-5"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-content mt-n25">
+                    <span class="list-title">گزارش جدید دریافت شد</span>
+                    <small class="text-muted d-block">چند ثانیه پیش</small>
+                  </div>
+                </div>
+                <div class="readable-mark-icon" data-toggle="tooltip" data-placement="left" title="Mark as read">
+                  <i class="bx bxs-circle text-light-primary font-medium-1"></i>
+                </div>
+              </li>
+              <li class="list-group-item list-group-item-action border-0 d-flex align-items-center justify-content-between">
+                <div class="list-left d-flex align-items-center">
+                  <div class="list-icon mr-1">
+                    <div class="avatar bg-rgba-primary m-0">
+                      <img class="img-fluid" src="../../assets/images/profile/user-uploads/social-2.jpg" alt="img placeholder" height="38" width="38">
+                    </div>
+                  </div>
+                  <div class="list-content mt-n25">
+                    <span class="list-title">مشتری جدید ثبت نام کرد</span>
+                    <small class="text-muted d-block">03:44 ب.ظ</small>
+                  </div>
+                </div>
+                <div class="readable-mark-icon" data-toggle="tooltip" data-placement="left" title="Mark as read">
+                  <i class="bx bxs-circle text-light-primary font-medium-1"></i>
+                </div>
+              </li>
+              <li class="list-group-item list-group-item-action border-0 d-flex align-items-center justify-content-between">
+                <div class="list-left d-flex align-items-center">
+                  <div class="list-icon mr-1">
+                    <div class="avatar bg-rgba-danger m-0 p-25">
+                      <div class="avatar-content">
+                        <span class="font-medium-1 text-danger">ب‌م</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-content mt-n25">
+                    <span class="list-title">مشتری جدید ثبت نام کرد</span>
+                    <small class="text-muted d-block">03:44 ب.ظ</small>
+                  </div>
+                </div>
+                <div class="readable-mark-icon" data-toggle="tooltip" data-placement="left" title="Mark as read">
+                  <i class="bx bxs-circle text-light-primary font-medium-1"></i>
+                </div>
+              </li>
+              <li class="list-group-item list-group-item-action border-0 d-flex align-items-center justify-content-between">
+                <div class="list-left d-flex align-items-center">
+                  <div class="list-icon mr-1">
+                    <div class="avatar bg-rgba-info m-0 p-25">
+                      <div class="avatar-content">
+                        <i class="bx bx-cake text-info font-medium-5"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-content mt-n25">
+                    <span class="list-title">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</span>
+                    <small class="text-muted d-block">دوشنبه</small>
+                  </div>
+                </div>
+                <div class="readable-mark-icon mark-as-read" data-toggle="tooltip" data-placement="left" title="Mark as Unread">
+                  <i class="bx bxs-circle text-light-secondary font-medium-1"></i>
+                </div>
+              </li>
+              <li class="list-group-item list-group-item-action border-0 d-flex align-items-center justify-content-between">
+                <div class="list-left d-flex align-items-center">
+                  <div class="list-icon mr-1">
+                    <div class="avatar bg-rgba-primary m-0">
+                      <img class="img-fluid" src="../../assets/images/profile/user-uploads/user-07.jpg" alt="img placeholder" height="38" width="38">
+                    </div>
+                  </div>
+                  <div class="list-content mt-n25">
+                    <span class="list-title">لورم ایپسوم متن ساختگی با تولید</span>
+                    <small class="text-muted d-block">12 اردیبهشت</small>
+                  </div>
+                </div>
+                <div class="readable-mark-icon" data-toggle="tooltip" data-placement="left" title="Mark as read">
+                  <i class="bx bxs-circle text-light-primary font-medium-1"></i>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Notification Widget Ends -->
+    <!-- Task App Widget Starts -->
+    <div class="col-lg-7">
+      <div class="row">
+        <div class="col-12">
+          <div class="card widget-todo">
+            <div class="card-header border-bottom d-flex justify-content-between align-items-center">
+              <h4 class="card-title d-flex mr-1 align-items-center">
+                <i class="bx bx-check font-medium-5 pl-25 pr-75"></i>وظایف
+              </h4>
+              <ul class="list-inline d-flex mb-0">
+                <li class="d-flex align-items-center">
+                  <i class="bx bx-check-circle font-medium-3 mr-50"></i>
+                  <div class="dropdown">
+                    <div class="dropdown-toggle mr-1" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">همه وظایف
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">گزینه 1</a>
+                      <a class="dropdown-item" href="#">گزینه 2</a>
+                      <a class="dropdown-item" href="#">گزینه 3</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="d-flex align-items-center">
+                  <i class="bx bx-sort mr-50 font-medium-3"></i>
+                  <div class="dropdown">
+                    <div class="dropdown-toggle" role="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">همه وظایف
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton2">
+                      <a class="dropdown-item" href="#">گزینه 1</a>
+                      <a class="dropdown-item" href="#">گزینه 2</a>
+                      <a class="dropdown-item" href="#">گزینه 3</a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body px-0 py-1">
+              <ul class="widget-todo-list-wrapper" id="widget-todo-list">
+                <li class="widget-todo-item">
+                  <div class="widget-todo-title-wrapper d-flex justify-content-between align-items-center mb-50">
+                    <div class="widget-todo-title-area d-flex align-items-center">
+                      <i class="bx bx-grid-vertical mr-25 font-medium-4 cursor-move"></i>
+                      <div class="checkbox checkbox-shadow">
+                        <input type="checkbox" class="checkbox__input" id="checkbox1">
+                        <label for="checkbox1"></label>
+                      </div>
+                      <span class="widget-todo-title mx-50">لورم ایپسوم متن ساختگی با تولید سادگی</span>
+                    </div>
+                    <div class="widget-todo-item-action d-flex align-items-center">
+                      <div class="badge badge-pill bg-rgba-success text-success mr-1">فرانت اند</div>
+                      <div class="avatar bg-rgba-primary m-0 mr-50">
+                        <div class="avatar-content">
+                          <span class="font-size-base text-primary">رآ</span>
+                        </div>
+                      </div>
+                      <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
+                    </div>
+                  </div>
+                </li>
+                <li class="widget-todo-item">
+                  <div class="widget-todo-title-wrapper d-flex justify-content-between align-items-center mb-50">
+                    <div class="widget-todo-title-area d-flex align-items-center">
+                      <i class="bx bx-grid-vertical mr-25 font-medium-4 cursor-move"></i>
+                      <div class="checkbox checkbox-shadow">
+                        <input type="checkbox" class="checkbox__input" id="checkbox2">
+                        <label for="checkbox2"></label>
+                      </div>
+                      <span class="widget-todo-title mx-50">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</span>
+                    </div>
+                    <div class="widget-todo-item-action d-flex align-items-center">
+                      <div class="badge badge-pill bg-rgba-danger text-danger mr-1">بک اند</div>
+                      <div class="avatar m-0 mr-50">
+                        <img src="../../assets/images/profile/user-uploads/social-2.jpg" alt="img placeholder" height="32" width="32">
+                      </div>
+                      <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
+                    </div>
+                  </div>
+                </li>
+                <li class="widget-todo-item completed">
+                  <div class="widget-todo-title-wrapper d-flex justify-content-between align-items-center mb-50">
+                    <div class="widget-todo-title-area d-flex align-items-center">
+                      <i class="bx bx-grid-vertical mr-25 font-medium-4 cursor-move"></i>
+                      <div class="checkbox checkbox-shadow">
+                        <input type="checkbox" class="checkbox__input" id="checkbox3" checked>
+                        <label for="checkbox3"></label>
+                      </div>
+                      <span class="widget-todo-title mx-50">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</span>
+                    </div>
+                    <div class="widget-todo-item-action d-flex align-items-center">
+                      <div class="badge badge-pill bg-rgba-primary text-primary mr-1">UI/UX</div>
+                      <div class="avatar bg-rgba-primary m-0 mr-50">
+                        <div class="avatar-content">
+                          <span class="font-size-base text-primary">ج‌د</span>
+                        </div>
+                      </div>
+                      <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
+                    </div>
+                  </div>
+                </li>
+                <li class="widget-todo-item">
+                  <div class="widget-todo-title-wrapper d-flex justify-content-between align-items-center mb-50">
+                    <div class="widget-todo-title-area d-flex align-items-center">
+                      <i class="bx bx-grid-vertical mr-25 font-medium-4 cursor-move"></i>
+                      <div class="checkbox checkbox-shadow">
+                        <input type="checkbox" class="checkbox__input" id="checkbox4">
+                        <label for="checkbox4"></label>
+                      </div>
+                      <span class="widget-todo-title mx-50">لورم ایپسوم متن ساختگی با تولید سادگی</span>
+                    </div>
+                    <div class="widget-todo-item-action d-flex align-items-center">
+                      <div class="badge badge-pill bg-rgba-info text-info mr-1">طراحی</div>
+                      <div class="avatar m-0 mr-50">
+                        <img src="../../assets/images/profile/user-uploads/user-05.jpg" alt="img placeholder" height="32" width="32">
+                      </div>
+                      <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
+                    </div>
+                  </div>
+                </li>
+                <li class="widget-todo-item">
+                  <div class="widget-todo-title-wrapper d-flex justify-content-between align-items-center mb-50">
+                    <div class="widget-todo-title-area d-flex align-items-center">
+                      <i class="bx bx-grid-vertical mr-25 font-medium-4 cursor-move"></i>
+                      <div class="checkbox checkbox-shadow">
+                        <input type="checkbox" class="checkbox__input" id="checkbox5">
+                        <label for="checkbox5"></label>
+                      </div>
+                      <span class="widget-todo-title mx-50">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با</span>
+                    </div>
+                    <div class="widget-todo-item-action d-flex align-items-center">
+                      <div class="badge badge-pill bg-rgba-warning text-warning mr-1">Javascript</div>
+                      <div class="avatar bg-rgba-primary m-0 mr-50">
+                        <div class="avatar-content">
+                          <span class="font-size-base text-primary">اک</span>
+                        </div>
+                      </div>
+                      <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
+                    </div>
+                  </div>
+                </li>
+                <li class="widget-todo-item">
+                  <div class="widget-todo-title-wrapper d-flex justify-content-between align-items-center mb-50">
+                    <div class="widget-todo-title-area d-flex align-items-center">
+                      <i class="bx bx-grid-vertical mr-25 font-medium-4 cursor-move"></i>
+                      <div class="checkbox checkbox-shadow">
+                        <input type="checkbox" class="checkbox__input" id="checkbox6">
+                        <label for="checkbox6"></label>
+                      </div>
+                      <span class="widget-todo-title mx-50">لورم ایپسوم متن ساختگی با</span>
+                    </div>
+                    <div class="widget-todo-item-action d-flex align-items-center">
+                      <div class="badge badge-pill bg-rgba-primary text-primary mr-1">UI/UX</div>
+                      <div class="avatar m-0 mr-50">
+                        <img src="../../assets/images/profile/user-uploads/user-05.jpg" alt="img placeholder" height="32" width="32">
+                      </div>
+                      <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Task App Widget Ends -->
+  </div>
+  <div class="row">
+    <!-- Statistics progress Widget -->
+    <div class="col-xl-4 col-md-6 progress-card">
+      <div class="card">
+        <div class="card-header border-bottom d-flex justify-content-between align-items-center pr-2">
+          <h5 class="card-title">آمار</h5>
+          <ul class="list-inline mb-0">
+            <li class="mr-50"> <i class="bullet bullet-xs bullet-primary mr-50"></i>اول </li>
+            <li><i class="bx bx-dots-vertical-rounded font-medium-3 align-middle cursor-pointer"></i></li>
+          </ul>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-borderless line-height-2">
+            <tbody>
+              <tr>
+                <td class="w-25">گرافیک</td>
+                <td>
+                  <div class="progress progress-bar-info progress-sm mb-0">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="24" aria-valuemin="80" aria-valuemax="100" style="width:24%;"></div>
+                  </div>
+                </td>
+                <td class="w-25 text-right">24%</td>
+              </tr>
+              <tr>
+                <td class="w-25">نمونه سازی</td>
+                <td>
+                  <div class="progress progress-bar-success progress-sm mb-0">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="61" aria-valuemin="80" aria-valuemax="100" style="width:61%;"></div>
+                  </div>
+                </td>
+                <td class="w-25 text-right">61%</td>
+              </tr>
+              <tr>
+                <td class="w-25">طراحی صنعتی</td>
+                <td>
+                  <div class="progress progress-bar-primary progress-sm mb-0">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="80" aria-valuemax="100" style="width:60%;"></div>
+                  </div>
+                </td>
+                <td class="w-25 text-right">24%</td>
+              </tr>
+              <tr>
+                <td class="w-25">مدل سازی</td>
+                <td>
+                  <div class="progress progress-bar-info progress-sm mb-0">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="80" aria-valuemax="100" style="width:35%;"></div>
+                  </div>
+                </td>
+                <td class="w-25 text-right">35%</td>
+              </tr>
+              <tr>
+                <td class="w-25">تصاویر</td>
+                <td>
+                  <div class="progress progress-bar-primary progress-sm mb-0">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="80" aria-valuemax="100" style="width:65%;"></div>
+                  </div>
+                </td>
+                <td class="w-25 text-right">65%</td>
+              </tr>
+              <tr>
+                <td class="w-25">HTML</td>
+                <td>
+                  <div class="progress progress-bar-success progress-sm mb-0">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="32" aria-valuemin="80" aria-valuemax="100" style="width:32%;"></div>
+                  </div>
+                </td>
+                <td class="w-25 text-right">32%</td>
+              </tr>
+              <tr>
+                <td class="w-25">لاراول</td>
+                <td>
+                  <div class="progress progress-bar-danger progress-sm mb-0">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="80" aria-valuemax="100" style="width:40%;"></div>
+                  </div>
+                </td>
+                <td class="w-25 text-right">40%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- Statistics progress Widget Ends -->
+    <!-- Earnings Widget Swiper Starts -->
+    <div class="col-xl-4 col-md-6 earnings-card" id="widget-earnings">
+      <div class="card">
+        <div class="card-header border-bottom d-flex justify-content-between align-items-center">
+          <h5 class="card-title"><i class="bx bx-dollar font-medium-5 align-middle"></i> درآمد</h5>
+          <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
+        </div>
+        <div class="card-content">
+          <div class="card-body py-1">
+            <!-- earnings swiper starts -->
+            <div class="widget-earnings-swiper swiper-container p-1">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide rounded swiper-shadow py-75 px-2 d-flex align-items-center" id="repo-design">
+                  <i class="bx bx-pyramid mr-50 font-large-1"></i>
+                  <div class="swiper-text">طراحی رپو
+                    <p class="mb-0 font-small-2 font-weight-normal">لورم ایپسوم</p>
+                  </div>
+                </div>
+                <div class="swiper-slide rounded swiper-shadow py-75 px-2 d-flex align-items-center" id="laravel-temp">
+                  <i class="bx bx-sitemap mr-50 font-large-1"></i>
+                  <div class="swiper-text">لورم ایپسوم متن
+                    <p class="mb-0 font-small-2 font-weight-normal">لورم ایپسوم</p>
+                  </div>
+                </div>
+                <div class="swiper-slide rounded swiper-shadow py-75 px-2 d-flex align-items-center" id="admin-theme">
+                  <i class="bx bx-check-shield mr-50 font-large-1"></i>
+                  <div class="swiper-text">لورم ایپسوم
+                    <p class="mb-0 font-small-2 font-weight-normal">لورم ایپسوم</p>
+                  </div>
+                </div>
+                <div class="swiper-slide rounded swiper-shadow py-75 px-2 d-flex align-items-center" id="ux-devloper">
+                  <i class="bx bx-devices mr-50 font-large-1"></i>
+                  <div class="swiper-text">لورم ایپسوم
+                    <p class="mb-0 font-small-2 font-weight-normal">لورم ایپسوم متن</p>
+                  </div>
+                </div>
+                <div class="swiper-slide rounded swiper-shadow py-75 px-2 d-flex align-items-center" id="marketing-guide">
+                  <i class="bx bx-book-bookmark mr-50 font-large-1"></i>
+                  <div class="swiper-text">راهنمای بازاریابی
+                    <p class="mb-0 font-small-2 font-weight-normal">لورم ایپسوم</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- earnings swiper ends -->
+          </div>
+        </div>
+        <div class="main-wrapper-content">
+          <div class="wrapper-content" data-earnings="repo-design">
+            <div class="widget-earnings-scroll table-responsive">
+              <table class="table table-borderless widget-earnings-width mb-0">
+                <tbody>
+                  <tr>
+                    <td class="pr-1">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-8.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">ماریا هیل</h6>
+                          <span class="font-small-2">طراح UX</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-primary progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="80" aria-valuemax="100" style="width:55%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-primary text-primary">+ 860,000 تومان</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-10.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">تونی استارک</h6>
+                          <span class="font-small-2">طراح</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-info progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="80" aria-valuemax="100" style="width:33%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-warning text-warning">- 280,000 تومان</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">پیتر پارکر</h6>
+                          <span class="font-small-2">توسعه دهنده</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-success progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="80" aria-valuemax="100" style="width:10%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-success text-success">+ 853,000 تومان</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">جسیکا آلبا</h6>
+                          <span class="font-small-2">بازاریابی</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-primary progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="15" aria-valuemin="80" aria-valuemax="100" style="width:15%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-primary text-primary">+ 125,000 تومان</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-12.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">لیونل مسی</h6>
+                          <span class="font-small-2">طراح</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-danger progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="80" aria-valuemax="100" style="width:35%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-danger text-danger">- 310,000 تومان</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="wrapper-content" data-earnings="laravel-temp">
+            <div class="widget-earnings-scroll table-responsive">
+              <table class="table table-borderless widget-earnings-width mb-0">
+                <tbody>
+                  <tr>
+                    <td class="pr-1">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">بری الن</h6>
+                          <span class="font-small-2">طراح UX</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-primary progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="80" aria-valuemax="100" style="width:25%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-primary text-primary">+ 120,000 تومان</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-9.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">بیل گیتس</h6>
+                          <span class="font-small-2">طراح</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-info progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="28" aria-valuemin="80" aria-valuemax="100" style="width:28%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-info text-info">- 280,000 تومان</span></td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-10.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">استیو راجرز</h6>
+                          <span class="font-small-2">توسعه دهنده</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-success progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="80" aria-valuemax="100" style="width:90%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-success text-success">+ 83,000 تومان</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">جسیکا آلبا</h6>
+                          <span class="font-small-2">بازاریابی</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-primary progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="15" aria-valuemin="80" aria-valuemax="100" style="width:15%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-primary text-primary">+ 125,000 تومان</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-12.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">لیونل مسی</h6>
+                          <span class="font-small-2">توسعه دهنده</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-danger progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="80" aria-valuemax="100" style="width:35%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-danger text-danger">- 310,000 تومان</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="wrapper-content" data-earnings="admin-theme">
+            <div class="widget-earnings-scroll table-responsive">
+              <table class="table table-borderless widget-earnings-width mb-0">
+                <tbody>
+                  <tr>
+                    <td class="pr-1">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-26.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">بری الن</h6>
+                          <span class="font-small-2">طراح UI</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-primary progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="77" aria-valuemin="80" aria-valuemax="100" style="width:77%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-primary text-primary">+ 920,000 تومان</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-25.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">بری الن</h6>
+                          <span class="font-small-2">طراح</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-info progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="52" aria-valuemin="80" aria-valuemax="100" style="width:52%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-info text-info">- 180,000 تومان</span></td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-15.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">استیو راجرز</h6>
+                          <span class="font-small-2">توسعه دهنده</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-success progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="80" aria-valuemax="100" style="width:90%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-success text-success">+ 553,000 تومان</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">اولیور کویین</h6>
+                          <span class="font-small-2">بازاریابی</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-primary progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="15" aria-valuemin="80" aria-valuemax="100" style="width:15%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-primary text-primary">+ 125,000 تومان</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-12.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">لیونل مسی</h6>
+                          <span class="font-small-2">UX</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-danger progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="80" aria-valuemax="100" style="width:35%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-danger text-danger">- 150,000 تومان</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="wrapper-content" data-earnings="ux-devloper">
+            <div class="widget-earnings-scroll table-responsive">
+              <table class="table table-borderless widget-earnings-width mb-0">
+                <tbody>
+                  <tr>
+                    <td class="pr-1">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-8.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">بری الن</h6>
+                          <span class="font-small-2">طراح UI</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-primary progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="59" aria-valuemin="80" aria-valuemax="100" style="width:59%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-primary text-primary">+ 210,000 تومان</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-16.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">تامی مرلین</h6>
+                          <span class="font-small-2">طراح</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-info progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="38" aria-valuemin="80" aria-valuemax="100" style="width:38%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-danger text-danger">- 280,000 تومان</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-1.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">استیو راجرز</h6>
+                          <span class="font-small-2">توسعه دهنده</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-success progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="80" aria-valuemax="100" style="width:90%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-success text-success">+ 853,000 تومان</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">جسیکا آلبا</h6>
+                          <span class="font-small-2">بازاریابی</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-primary progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="15" aria-valuemin="80" aria-valuemax="100" style="width:15%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-primary text-primary">+ 125,000 تومان</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-2.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">سارا لنس</h6>
+                          <span class="font-small-2">توسعه دهنده</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-danger progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="80" aria-valuemax="100" style="width:75%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-danger text-danger">- 360,000 تومان</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="wrapper-content" data-earnings="marketing-guide">
+            <div class="widget-earnings-scroll table-responsive">
+              <table class="table table-borderless widget-earnings-width mb-0">
+                <tbody>
+                  <tr>
+                    <td class="pr-1">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-18.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">بری الن</h6>
+                          <span class="font-small-2">طراح UI</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-primary progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="22" aria-valuemin="80" aria-valuemax="100" style="width:22%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-primary text-primary">+ 120,000 تومان</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-19.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">نیک فیوری</h6>
+                          <span class="font-small-2">طراح</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-info progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="28" aria-valuemin="80" aria-valuemax="100" style="width:28%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-primary text-primary">- 270,000 تومان</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">استیو راجرز</h6>
+                          <span class="font-small-2">توسعه دهنده</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-success progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="80" aria-valuemax="100" style="width:90%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-success text-success">+ 853,000 تومان</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-12.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">جسیکا آلبا</h6>
+                          <span class="font-small-2">بازاریابی</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-primary progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="15" aria-valuemin="80" aria-valuemax="100" style="width:15%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-primary text-primary">+ 225,000 تومان</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pr-75">
+                      <div class="media align-items-center">
+                        <a class="media-left mr-50" href="#">
+                          <img src="../../assets/images/portrait/small/avatar-s-25.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                        </a>
+                        <div class="media-body">
+                          <h6 class="media-heading mb-0 mt-n25 primary-font">لیونل مسی</h6>
+                          <span class="font-small-2">توسعه دهنده</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-0 w-25">
+                      <div class="progress progress-bar-danger progress-sm mb-0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="80" aria-valuemax="100" style="width:35%;"></div>
+                      </div>
+                    </td>
+                    <td class="text-center"><span class="badge bg-rgba-danger text-danger">- 350,000 تومان</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Earnings Widget Swiper Ends -->
+
+    <!-- Timeline Widget Starts -->
+    <div class="col-xl-4 col-md-6 timline-card">
+      <div class="card ">
+        <div class="card-header">
+          <h4 class="card-title">
+            خط زمانی
+          </h4>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <ul class="widget-timeline">
+              <li class="timeline-items timeline-icon-success active">
+                <div class="timeline-time">دوشنبه 8:17 ب.ظ</div>
+                <h6 class="timeline-title">لورم ایپسوم متن ساختگی</h6>
+                <p class="timeline-text">در <a href="JavaScript:void(0);">نام پروژه</a></p>
+                <div class="timeline-content">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                </div>
+              </li>
+              <li class="timeline-items timeline-icon-primary active">
+                <div class="timeline-time">5 روز پیش</div>
+                <h6 class="timeline-title">لورم ایپسوم متن ساختگی با تولید</h6>
+                <p class="timeline-text">در <a href="JavaScript:void(0);">نام پروژه</a></p>
+                <div class="timeline-content">
+                  <img src="../../assets/images/icon/sketch.png" alt="document" height="36" width="27" class="mr-50">پوشه اطلاعات متن ساختگی
+                </div>
+              </li>
+              <li class="timeline-items timeline-icon-danger active">
+                <div class="timeline-time">7 ساعت پیش</div>
+                <h6 class="timeline-title">لورم ایپسوم متن ساختگی</h6>
+                <p class="timeline-text">در <a href="JavaScript:void(0);">نام پروژه</a></p>
+                <div class="timeline-content">
+                  <img src="../../assets/images/icon/pdf.png" alt="document" height="36" width="27" class="mr-50">Received.pdf ساختگی
+                </div>
+              </li>
+              <li class="timeline-items timeline-icon-info active">
+                <div class="timeline-time">5 ساعت پیش</div>
+                <h6 class="timeline-title">لورم ایپسوم متن ساختگی با</h6>
+                <p class="timeline-text">در <a href="JavaScript:void(0);">نام پروژه</a></p>
+                <div class="timeline-content">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+                </div>
+              </li>
+              <li class="timeline-items timeline-icon-warning">
+                <div class="timeline-time">2 دقیقه پیش</div>
+                <h6 class="timeline-title">لورم ایپسوم متن ساختگی </h6>
+                <p class="timeline-text">در <a href="JavaScript:void(0);">نام پروژه</a></p>
+                <div class="timeline-content">
+                  لورم ایپسوم متن
+                </div>
+              </li>
+            </ul>
+            <button class="btn btn-block btn-primary">مشاهده همه اعلان ها</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Timeline Widget Ends -->
+
+    <!-- chat Widget Starts -->
+    <div class="col-xl-4 col-md-6 widget-chat-card">
+      <div class="widget-chat widget-chat-messages">
+        <div class="card">
+          <div class="card-header border-bottom p-0">
+            <div class="media m-75">
+              <a class="media-left" href="JavaScript:void(0);">
+                <div class="avatar mr-75">
+                  <img src="../../assets/images/portrait/small/avatar-s-2.jpg" alt="avtar images" width="32" height="32">
+                  <span class="avatar-status-online"></span>
+                </div>
+              </a>
+              <div class="media-body">
+                <h6 class="media-heading mb-0 mt-n25"><a href="javaScript:void(0);">جان اسنو</a>
+                </h6>
+                <span class="text-muted font-small-3">فعال</span>
+              </div>
+              <i class="bx bx-x float-right my-auto cursor-pointer"></i>
+            </div>
+          </div>
+          <div class="card-body widget-chat-container widget-chat-scroll">
+            <div class="chat-content">
+              <div class="chat">
+                <div class="chat-body">
+                  <div class="chat-message">
+                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</p>
+                    <span class="chat-time">7:45 ق.ظ</span>
+                  </div>
+                </div>
+              </div>
+              <div class="chat chat-left">
+                <div class="chat-body">
+                  <div class="chat-message">
+                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
+                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</p>
+                    <span class="chat-time">7:50 ق.ظ</span>
+                  </div>
+                  <div class="chat-message">
+                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</p>
+                    <span class="chat-time">7:58 ق.ظ</span>
+                  </div>
+                </div>
+              </div>
+              <div class="badge badge-pill badge-light-secondary my-1">دیروز</div>
+              <div class="chat">
+                <div class="chat-body">
+                  <div class="chat-message">
+                    <p>لورم ایپسوم</p>
+                    <span class="chat-time">8:00 ق.ظ</span>
+                  </div>
+                  <div class="chat-message">
+                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
+                    <span class="chat-time">8:01 ق.ظ</span>
+                  </div>
+                </div>
+              </div>
+              <div class="chat chat-left">
+                <div class="chat-body">
+                  <div class="chat-message">
+                    <p>لورم ایپسوم متن ساختگی با تولید</p>
+                    <span class="chat-time">10:12 ق.ظ</span>
+                  </div>
+                  <div class="chat-message">
+                    <p>لورم ایپسوم متن ساختگی با تولید سادگی</p>
+                    <span class="chat-time">10:15 ق.ظ</span>
+                  </div>
+                  <div class="chat-message">
+                    <p>لورم ایپسوم متن ساختگی با</p>
+                    <span class="chat-time">10:18 ق.ظ</span>
+                  </div>
+                </div>
+              </div>
+              <div class="chat">
+                <div class="chat-body">
+                  <div class="chat-message">
+                    <p>لورم ایپسوم متن ساختگی با تولید</p>
+                    <span class="chat-time">10:20 ق.ظ</span>
+                  </div>
+                </div>
+              </div>
+              <div class="chat chat-left">
+                <div class="chat-body">
+                  <div class="chat-message">
+                    <p>لورم ایپسوم متن ساختگی با تولید</p>
+                    <span class="chat-time">3:32 ب.ظ</span>
+                  </div>
+                  <div class="chat-message">
+                    <p>لورم ایپسوم</p>
+                    <span class="chat-time">3:33 ب.ظ</span>
+                  </div>
+                </div>
+              </div>
+              <div class="chat">
+                <div class="chat-body">
+                  <div class="chat-message">
+                    <p>لورم ایپسوم متن ساختگی با تولید سادگی</p>
+                    <span class="chat-time">4:15 ب.ظ</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer border-top p-1">
+            <form class="d-flex align-items-center" onsubmit="widgetMessageSend();" action="javascript:void(0);">
+              <i class="bx bx-face cursor-pointer"></i>
+              <i class="bx bx-paperclip ml-75 cursor-pointer"></i>
+              <input type="text" class="form-control widget-chat-message mx-75" placeholder="اینجا بنویسید ...">
+              <button type="submit" class="btn btn-primary glow"><i class="bx bx-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- chat Widget Ends -->
+    <!-- User Detals Widget Starts -->
+    <div class="col-lg-12 col-xl-8 user-details-card">
+      <div class="card widget-user-details">
+        <div class="card-header">
+          <div class="card-title-details d-flex align-items-center">
+            <div class="avatar bg-rgba-primary p-25 mr-2 ml-0">
+              <img class="img-fluid" src="../../assets/images/profile/user-uploads/social-2.jpg" alt="img placeholder" height="70" width="70">
+            </div>
+            <div class="mt-n25">
+              <h5>گزارش مالی برای شرکت هواپیمایی</h5>
+              <div class="card-subtitle">برنامه عالی برای مدیریت پروژه</div>
+            </div>
+          </div>
+          <div class="heading-elements">
+            <i class="bx bx-dots-vertical-rounded font-medium-3 align-middle"></i>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td class="pb-0 pl-0"><strong>تاریخ شروع</strong></td>
+                    <td class="pb-0 pl-0"><strong>تاریخ اعتبار</strong></td>
+                    <td class="pb-0"><strong>اعضا</strong></td>
+                    <td class="pb-0"><strong>بودجه</strong></td>
+                    <td class="pb-0"><strong>هزینه ها</strong></td>
+                  </tr>
+                  <tr>
+                    <td class="pl-0">
+                      <div class="badge bg-rgba-primary text-primary text-bold-500 py-50">2 اردیبهشت 1399</div>
+                    </td>
+                    <td class="pl-0">
+                      <div class="badge bg-rgba-danger text-danger text-bold-500 py-50">6 اردیبهشت 1399</div>
+                    </td>
+                    <td>
+                      <ul class="list-unstyled users-list m-0  d-flex align-items-center">
+                        <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Lai Lewandowski" class="avatar pull-up">
+                          <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" height="30" width="30">
+                        </li>
+                        <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Elicia Rieske" class="avatar pull-up">
+                          <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="30" width="30">
+                        </li>
+                        <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Darcey Nooner" class="avatar pull-up">
+                          <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-8.jpg" alt="Avatar" height="30" width="30">
+                        </li>
+                        <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Julee Rossignol" class="avatar pull-up">
+                          <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-10.jpg" alt="Avatar" height="30" width="30">
+                        </li>
+                        <li class="avatar pull-up">
+                          <span class="badge badge-pill badge-light-primary badge-round">+7</span>
+                        </li>
+                      </ul>
+                    </td>
+                    <td>249,500,000 تومان</td>
+                    <td>76,810,000 تومان</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <span class="line-height-2 d-inline-block mb-25">پیشرفت</span>
+            <div class="progress progress-bar-primary progress-sm mb-3">
+              <div class="progress-bar progress-label" role="progressbar" aria-valuenow="78" style="width:78%"></div>
+            </div>
+            <span class="line-height-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در</span>
+          </div>
+        </div>
+        <div class="card-footer d-flex justify-content-between border-top">
+          <div class="d-flex">
+            <div class="d-inline-flex align-items-center mr-2">
+              <i class="bx bx-check mr-25"></i>
+              <small>72 وظیفه</small>
+            </div>
+            <div class="d-inline-flex align-items-center">
+              <i class="bx bx-message mr-25"></i>
+              <small>648 دیدگاه</small>
+            </div>
+          </div>
+          <div>
+            <button type="button" class="btn btn-primary glow">جزئیات</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- User Detals Widget Ends -->
+
+    <!-- User Widget with Image-top Starts -->
+    <div class="col-xl-4 col-md-6 img-top-card">
+      <div class="card widget-img-top">
+        <div class="card-content">
+          <img class="card-img-top img-fluid mb-1" src="../../assets/images/profile/user-uploads/girl-image.jpg" alt="Card image cap">
+          <div class="heading-elements">
+            <i class="bx bx-dots-vertical-rounded font-medium-3 align-middle text-white"></i>
+          </div>
+          <div class="text-center">
+            <h4>امیلیا کلارک</h4>
+            <p>طراح</p>
+            <p class="px-2 pb-1">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای</p>
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <div class="d-flex justify-content-around mb-1 line-height-2">
+            <div class="d-flex flex-column align-items-center content-post">
+              <span>593</span>
+              <small class="text-muted">مجموع پست</small>
+            </div>
+            <div class="d-flex flex-column align-items-center content-followers">
+              <span>456</span>
+              <small class="text-muted">دنبال کننده</small>
+            </div>
+            <div class="d-flex flex-column align-items-center content-following">
+              <span>468</span>
+              <small class="text-muted">دنبال شونده</small>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary glow px-4">دنبال کردن</button>
+        </div>
+      </div>
+    </div>
+    <!-- User Widget with Image-top Ends -->
+    <!-- User Widget with Overlay Image Starts -->
+    <div class="col-xl-4 col-md-6 overlay-image-card">
+      <div class="card widget-overlay">
+        <div class="card widget-overlay-card mb-0">
+          <div class="card-content">
+            <div class="card-body p-0">
+              <img class="card-img img-fluid" src="../../assets/images/cards/finance.jpg" alt="Card image">
+              <div class="card-img-overlay overlay-primary">
+                <div class="d-flex justify-content-between">
+                  <span class="card-title text-white">واریزی</span>
+                  <div class="dropdown">
+                    <button class="btn btn-outline-white dropdown-toggle" type="button" id="dropdownMenuButtonSec" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      1399
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButtonSec">
+                      <a class="dropdown-item" href="#">1399</a>
+                      <a class="dropdown-item" href="#">1398</a>
+                      <a class="dropdown-item" href="#">1397</a>
+                    </div>
+                  </div>
+                </div>
+                <h1 class="font-large-2 text-center widget-overlay-card-title primary-font">18,100 تومان</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card widget-overlay-content mb-0">
+          <div class="card-content text-center">
+            <button class="btn btn-lg btn-white shadow inclusive-btn" type="button">محاسبه همه درآمدها</button>
+          </div>
+          <div class="card-body px-0 pb-0">
+            <ul class="nav nav-tabs justify-content-center" role="tablist">
+              <li class="nav-item mr-1">
+                <a class=" nav-link active" id="january-tab" data-toggle="tab" href="#january" aria-controls="january" role="tab" aria-selected="true">
+                  فروردین</a>
+              </li>
+              <li class="nav-item mr-1">
+                <a class=" nav-link " id="february-tab" data-toggle="tab" href="#february" aria-controls="february" role="tab" aria-selected="false">
+                  اردیبهشت</a>
+              </li>
+              <li class="nav-item mr-1">
+                <a class="  nav-link " id="march-tab" data-toggle="tab" href="#march" aria-controls="march" role="tab" aria-selected="false">
+                  خرداد</a>
+              </li>
+              <li class="nav-item mr-1">
+                <a class="  nav-link " id="april-tab" data-toggle="tab" href="#april" aria-controls="april" role="tab" aria-selected="false">
+                  تیر</a>
+              </li>
+            </ul>
+            <div class="tab-content pl-0">
+              <div class="tab-pane active" id="january" aria-labelledby="january-tab" role="tabpanel">
+                <div class="table-responsive">
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr class="border-0">
+                        <th>قالب</th>
+                        <th>وضعیت</th>
+                        <th>تیم</th>
+                        <th>جمع</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="pr-0">
+                          <span class="text-bold-500 d-block">Frest</span>
+                          <small>لورم ایپسوم متن ساختگی</small>
+                        </td>
+                        <td>
+                          <div class="badge badge-pill bg-rgba-danger text-danger">در انتظار</div>
+                        </td>
+                        <td>
+                          <ul class="list-unstyled users-list m-0  d-flex align-items-center">
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Lai Lewandowski" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Elicia Rieske" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Darcey Nooner" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-8.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Darcey Nooner" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-3.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="text-primary">66,840 تومان</td>
+                      </tr>
+                      <tr>
+                        <td class="pr-0">
+                          <span class="text-bold-500 d-block">لورم ایپسوم</span>
+                          <small>لورم ایپسوم متن ساختگی با</small>
+                        </td>
+                        <td>
+                          <div class="badge badge-pill bg-rgba-success text-success">به روز شده</div>
+                        </td>
+                        <td>
+                          <ul class="list-unstyled users-list m-0  d-flex align-items-center">
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Lai Lewandowski" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Elicia Rieske" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Darcey Nooner" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-8.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Darcey Nooner" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-3.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                            <li class="avatar pull-up">
+                              <span class="badge badge-pill badge-light-primary badge-round">+7</span>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="text-primary">12,850 تومان</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="tab-pane pl-0" id="february" aria-labelledby="february-tab" role="tabpanel">
+                <div class="table-responsive">
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr class="border-0">
+                        <th>قالب</th>
+                        <th>وضعیت</th>
+                        <th>تیم</th>
+                        <th>جمع</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="pr-0">
+                          <span class="text-bold-500 d-block">لورم ایپسوم</span>
+                          <small>لورم ایپسوم متن ساختگی</small>
+                        </td>
+                        <td>
+                          <div class="badge badge-pill bg-rgba-primary text-primary">جدید</div>
+                        </td>
+                        <td>
+                          <ul class="list-unstyled users-list m-0  d-flex align-items-center">
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Lai Lewandowski" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-9.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Elicia Rieske" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-2.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="text-primary">24,520 تومان</td>
+                      </tr>
+                      <tr>
+                        <td class="pr-0">
+                          <span class="text-bold-500 d-block">انگولار</span>
+                          <small>لورم ایپسوم متن ساختگی</small>
+                        </td>
+                        <td>
+                          <div class="badge badge-pill bg-rgba-warning text-warning">انصراف</div>
+                        </td>
+                        <td>
+                          <ul class="list-unstyled users-list m-0  d-flex align-items-center">
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Lai Lewandowski" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-1.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="text-primary">18,252 تومان</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="tab-pane pl-0" id="march" aria-labelledby="march-tab" role="tabpanel">
+                <div class="table-responsive">
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr class="border-0">
+                        <th>قالب</th>
+                        <th>وضعیت</th>
+                        <th>تیم</th>
+                        <th>جمع</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="pr-0">
+                          <span class="text-bold-500 d-block">لورم ایپسوم</span>
+                          <small>لورم ایپسوم متن ساختگی با</small>
+                        </td>
+                        <td>
+                          <div class="badge badge-pill bg-rgba-success text-success">به روز شده</div>
+                        </td>
+                        <td>
+                          <ul class="list-unstyled users-list m-0  d-flex align-items-center">
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Lai Lewandowski" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Elicia Rieske" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-22.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Darcey Nooner" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-23.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Darcey Nooner" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-13.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="text-primary">120,623 تومان</td>
+                      </tr>
+                      <tr>
+                        <td class="pr-0">
+                          <span class="text-bold-500 d-block">مدرن</span>
+                          <small>لورم ایپسوم متن ساختگی</small>
+                        </td>
+                        <td>
+                          <div class="badge badge-pill bg-rgba-danger text-danger">در انتظار</div>
+                        </td>
+                        <td>
+                          <ul class="list-unstyled users-list m-0  d-flex align-items-center">
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Lai Lewandowski" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-17.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Elicia Rieske" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-18.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Darcey Nooner" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-19.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="text-primary">23,562 تومان</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="tab-pane pl-0" id="april" aria-labelledby="april-tab" role="tabpanel">
+                <div class="table-responsive">
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr class="border-0">
+                        <th>قالب</th>
+                        <th>وضعیت</th>
+                        <th>تیم</th>
+                        <th>جمع</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="pr-0">
+                          <span class="text-bold-500 d-block">لورم ایپسوم</span>
+                          <small>لورم ایپسوم متن ساختگی با</small>
+                        </td>
+                        <td>
+                          <div class="badge badge-pill bg-rgba-primary text-primary">جدید</div>
+                        </td>
+                        <td>
+                          <ul class="list-unstyled users-list m-0  d-flex align-items-center">
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Lai Lewandowski" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-18.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Elicia Rieske" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-19.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Darcey Nooner" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-10.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                            <li class="avatar pull-up">
+                              <span class="badge badge-pill badge-light-primary badge-round">+5</span>
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="text-primary">120,623 تومان</td>
+                      </tr>
+                      <tr>
+                        <td class="pr-0">
+                          <span class="text-bold-500 d-block">لورم ایپسوم</span>
+                          <small>لورم ایپسوم متن ساختگی</small>
+                        </td>
+                        <td>
+                          <div class="badge badge-pill bg-rgba-danger text-danger">در انتظار</div>
+                        </td>
+                        <td>
+                          <ul class="list-unstyled users-list m-0  d-flex align-items-center">
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Lai Lewandowski" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-22.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Elicia Rieske" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-21.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Darcey Nooner" class="avatar pull-up">
+                              <img class="media-object rounded-circle" src="../../assets/images/portrait/small/avatar-s-1.jpg" alt="Avatar" height="30" width="30">
+                            </li>
+                          </ul>
+                        </td>
+                        <td class="text-primary">10,240 تومان</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- User Widget with Overlay Image Ends -->
+
+    <!-- User widget Card & Whether Card Starts -->
+    <div class="col-xl-4 col-md-12 whether-card">
+      <div class="row">
+        <!-- User Widget Starts -->
+        <div class="col-xl-12 col-md-6 col-12 user-profile-card">
+          <div class="card">
+            <div class="card-header mx-auto pt-3">
+              <div class="avatar bg-rgba-primary p-50">
+                <img class="img-fluid" src="../../assets/images/profile/user-uploads/social-2.jpg" alt="img placeholder" height="134" width="134">
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-body text-center">
+                <h4>ماریا آرنولد</h4>
+                <p>توسعه دهنده</p>
+                <!-- <p class="px-1">Jelly beans halvah cake chocolate gummies.</p> -->
+                <div class="d-flex justify-content-around mb-1">
+                  <div class="card-icons d-flex flex-column">
+                    <i class="bx bx-camera font-medium-5 font-weight-bold"></i>
+                    <p>5693</p>
+                  </div>
+                  <div class="card-icons d-flex flex-column">
+                    <i class="bx bx-heart font-medium-5 font-weight-bold"></i>
+                    <p>856</p>
+                  </div>
+                  <div class="card-icons d-flex flex-column">
+                    <i class="bx bx-user font-medium-5 font-weight-bold"></i>
+                    <p>468</p>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-primary glow px-4">دنبال کردن</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- User Widget Ends -->
+        <!-- Clowd Widget Starts -->
+        <div class="col-xl-12 col-md-6 col-12 whether">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="font-weight-normal mb-0">16<sup>o</sup>C</h3>
+                <div class="text-muted">ابری</div>
+              </div>
+              <div class="heading-elements">
+                <i class="bx bx-rotate-right font-medium-4"></i>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="line-height-2">
+                    <p class="mb-0">تبریز، آذربایجان شرقی</p>
+                    <span>جمعه 19 اردیبهشت 1399</span>
+                  </div>
+                  <i class="bx bx-cloud font-large-2"></i>
+                </div>
+                <hr>
+                <div class="d-flex align-items-center justify-content-around">
+                  <div class="d-flex flex-column align-items-center">
+                    <small class="text-muted">خیر</small>
+                    <i class="bx bx-cloud-lightning text-bold-700 font-medium-2 my-50"></i>
+                    <small class="text-muted">2<sup>+</sup></small>
+                  </div>
+                  <div class="d-flex flex-column align-items-center">
+                    <small class="text-muted">7:0</small>
+                    <i class="bx bx-cloud-light-rain font-medium-2 my-50"></i>
+                    <small class="text-muted">22<sup>o</sup></small>
+                  </div>
+                  <div class="d-flex flex-column align-items-center">
+                    <small class="text-muted">8:0</small>
+                    <i class="bx bx-cloud-snow font-medium-2 my-50"></i>
+                    <small class="text-muted">2<sup>+</sup></small>
+                  </div>
+                  <div class="d-flex flex-column align-items-center">
+                    <small class="text-muted">9:0</small>
+                    <i class="bx bx-sun font-medium-2 my-50"></i>
+                    <small class="text-muted">3<sup>+</sup></small>
+                  </div>
+                  <div class="d-flex flex-column align-items-center">
+                    <small class="text-muted">10:0</small>
+                    <i class="bx bx-wind font-medium-2 my-50"></i>
+                    <small class="text-muted">3<sup>+</sup></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Clowd Widget Ends -->
+      </div>
+    </div>
+    <!-- User widget Card & Whether Card Ends -->
+  </div>
+</section>
+<!-- Widgets Advance End -->
+
+<!-- Widgets Charts start -->
+<section id="widgets-chart">
+  <div class="row">
+    <div class="col-12 mt-1 mb-2">
+      <h4>نمودار ها</h4>
+      <hr>
+    </div>
+  </div>
+  <div class="row widget-radial-charts">
+    <!-- Radial Followers Primary Chart Starts -->
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body p-0">
+            <div class="d-lg-flex justify-content-between">
+              <div class="widget-card-details d-flex flex-column justify-content-between p-2">
+                <div>
+                  <h5 class="font-medium-2 font-weight-normal">دنبال کننده</h5>
+                  <p class="text-muted">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</p>
+                </div>
+                <a href="#">جزئیات</a>
+              </div>
+              <div class="mb-1 mb-sm-0" id="radial-chart-primary"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Radial Followers Primary Chart Ends -->
+    <!-- Radial Users Success Chart Starts -->
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body p-0">
+            <div class="d-lg-flex justify-content-between">
+              <div class="widget-card-details d-flex flex-column justify-content-between p-2">
+                <div>
+                  <h5 class="font-medium-2 font-weight-normal">کاربران</h5>
+                  <p class="text-muted">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</p>
+                </div>
+                <a href="#">جزئیات</a>
+              </div>
+              <div class="mb-1 mb-sm-0" id="radial-chart-success"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Radial Users Success Chart Ends -->
+    <!-- Radial Registrations Danger Chart Starts -->
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body p-0">
+            <div class="d-lg-flex justify-content-between">
+              <div class="widget-card-details d-flex flex-column justify-content-between p-2">
+                <div>
+                  <h5 class="font-medium-2 font-weight-normal">ثبت نام ها</h5>
+                  <p class="text-muted">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</p>
+                </div>
+                <a href="#">جزئیات</a>
+              </div>
+              <div class="mb-1 mb-sm-0" id="radial-chart-danger"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Radial Registrations Danger Chart Ends -->
+  </div>
+  <div class="row">
+    <!-- Followers Danger Line Chart Starts -->
+    <div class="col-xl-4 col-md-6">
+      <div class="card widget-followers">
+        <div class="card-header d-flex align-items-center justify-content-between">
+          <div>
+            <h4 class="card-title mb-0">دنبال کننده</h4>
+            <small class="text-muted">پروژه سیستم</small>
+          </div>
+          <div class="d-flex align-items-center widget-followers-heading-right">
+            <h5 class="mr-2 font-weight-normal mb-0 primary-font">860K</h5>
+            <div class="d-flex flex-column align-items-center">
+              <i class="bx bx-caret-down text-danger font-medium-1"></i>
+              <small class="text-muted">-31%</small>
+            </div>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <div id="follower-danger-chart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Followers Danger Line Chart Ends -->
+    <!-- Followers Primary Line Chart Starts -->
+    <div class="col-xl-4 col-md-6">
+      <div class="card widget-followers">
+        <div class="card-header d-flex align-items-center justify-content-between">
+          <div>
+            <h4 class="card-title mb-0">دنبال کننده</h4>
+            <small class="text-muted">پروژه سیستم</small>
+          </div>
+          <div class="d-flex align-items-center widget-followers-heading-right">
+            <h5 class="mr-2 font-weight-normal mb-0 primary-font">520K</h5>
+            <div class="d-flex flex-column align-items-center">
+              <i class="bx bx-caret-up text-success font-medium-1"></i>
+              <small class="text-muted">+31%</small>
+            </div>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <div id="follower-primary-chart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Followers Primary Line Chart Ends -->
+    <!-- Followers Success Line Chart Starts -->
+    <div class="col-xl-4 col-md-6">
+      <div class="card widget-followers">
+        <div class="card-header d-flex align-items-center justify-content-between">
+          <div>
+            <h4 class="card-title mb-0">دنبال کننده</h4>
+            <small class="text-muted">پروژه سیستم</small>
+          </div>
+          <div class="d-flex align-items-center widget-followers-heading-right">
+            <h5 class="mr-2 font-weight-normal mb-0 primary-font">673K</h5>
+            <div class="d-flex flex-column align-items-center">
+              <i class="bx bx-caret-up text-success font-medium-1"></i>
+              <small class="text-muted">+62%</small>
+            </div>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <div id="follower-success-chart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Followers Success Line Chart Ends -->
+  </div>
+  <div class="row">
+    <!-- Statistics Multi Radial Chart Starts -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card">
+        <div class="card-header border-bottom d-flex justify-content-between align-items-center">
+          <h4 class="card-title">آمار</h4>
+          <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <div id="radial-chart-multi"></div>
+            <ul class="list-inline text-center">
+              <li class="mr-2"> <span class="bullet bullet-xs bullet-primary mr-50"></span>دیدگاه‌ها</li>
+              <li class="mr-2"> <span class="bullet bullet-xs bullet-warning mr-50"></span>اشتراک گذاری</li>
+              <li> <i class="bullet bullet-xs bullet-danger mr-50"></i>پاسخ ها</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Statistics Multi Radial Chart Ends -->
+    <!-- Statistics Half Radial Chart Starts -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card">
+        <div class="card-header border-bottom d-flex justify-content-between align-items-center">
+          <h4 class="card-title">آمار</h4>
+          <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
+        </div>
+        <div class="card-content">
+          <div class="card-body pt-1">
+            <div id="radial-chart-half"></div>
+            <div class="chart-details text-center">
+              <h6 class="font-medium-2 mb-1">عالی</h6>
+              <p class="text-muted">لورم ایپسوم متن ساختگی با تولید سادگی</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Statistics Half Radial Chart Ends -->
+    <!-- Gauge Chart Starts -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card">
+        <div class="card-header border-bottom d-flex justify-content-between align-items-center">
+          <h4 class="card-title">نمودار درجه</h4>
+          <ul class="list-inline mb-0">
+            <li class="mr-50"> <i class="bullet bullet-xs bullet-warning mr-50"></i>اول</li>
+            <li><i class="bx bx-dots-vertical-rounded font-medium-3 align-middle cursor-pointer"></i></li>
+          </ul>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <div id="gauge-chart" class="mb-2"></div>
+            <p class="text-center">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Gauge Chart Ends -->
+    <!-- Statistics Donut Chart Starts -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center border-bottom">
+          <h4 class="card-title">آمار</h4>
+          <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <div class="pb-1 pt-3" id="donut-chart-statistics"></div>
+            <div class="chart-info d-flex justify-content-between mb-1">
+              <div class="d-flex align-items-center">
+                <i class="bullet bullet-xs bullet-primary mr-50"></i>
+                <span class="text-muted text-bold-600 ml-50">نصب</span>
+              </div>
+              <div class="text-muted">70%</div>
+            </div>
+            <div class="chart-info d-flex justify-content-between mb-1">
+              <div class="d-flex align-items-center">
+                <i class="bullet bullet-xs bullet-warning mr-50"></i>
+                <span class="text-muted text-bold-600 ml-50">بازدید صفحه</span>
+              </div>
+              <div class="text-muted">30%</div>
+            </div>
+            <div class="chart-info d-flex justify-content-between">
+              <div class="d-flex align-items-center">
+                <i class="bullet bullet-xs bullet-danger mr-50"></i>
+                <span class="text-muted text-bold-600 ml-50">کاربران فعال</span>
+              </div>
+              <div class="text-muted">40%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Statistics Donut Chart Ends -->
+    <!-- Spending Donut Chart Starts -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card">
+        <div class="card-header d-flex align-items-center justify-content-between">
+          <h4 class="card-title">مخارج</h4>
+          <i class="bx bx-dots-vertical-rounded font-medium-3 align-middle cursor-pointer"></i>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <div id="donut-chart-spending" class="py-2"></div>
+            <div class="chart-info d-flex justify-content-between mb-75">
+              <div class="d-flex align-items-center">
+                <i class="bullet bullet-xs bullet-primary mr-50"></i>
+                <span class="text-muted text-bold-600 ml-50">حمل و نقل عمومی</span>
+              </div>
+              <div class="text-muted">44%</div>
+            </div>
+            <div class="chart-info d-flex justify-content-between mb-75">
+              <div class="d-flex align-items-center">
+                <i class="bullet bullet-xs bullet-danger mr-50"></i>
+                <span class="text-muted text-bold-600 ml-50">کافه و رستوران</span>
+              </div>
+              <div class="text-muted">55%</div>
+            </div>
+            <div class="chart-info d-flex justify-content-between mb-75">
+              <div class="d-flex align-items-center">
+                <i class="bullet bullet-xs bullet-warning mr-50"></i>
+                <span class="text-muted text-bold-600 ml-50">پروژه های کسب و کار</span>
+              </div>
+              <div class="text-muted">13%</div>
+            </div>
+            <div class="chart-info d-flex justify-content-between">
+              <div class="d-flex align-items-center">
+                <i class="bullet bullet-xs bullet-success mr-50"></i>
+                <span class="text-muted text-bold-600 ml-50">مسافرت و تفریح</span>
+              </div>
+              <div class="text-muted">33%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Spending Donut Chart Ends -->
+    <!-- Radar Multi Series chart Starts -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card">
+        <div class="card-header border-bottom d-flex justify-content-between align-items-center">
+          <h4 class="card-title">نمودار راداری</h4>
+          <ul class="list-inline mb-0">
+            <li class="mr-50"> <i class="bullet bullet-xs bullet-warning mr-50"></i>اول</li>
+            <li><i class="bx bx-dots-vertical-rounded font-medium-3 align-middle cursor-pointer"></i></li>
+          </ul>
+        </div>
+        <div class="card-content">
+          <div class="card-body pb-0">
+            <div id="radar-multi-chart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Radar Multi Series chart Ends -->
+  </div>
+  <div class="row">
+    <!-- Statistics Line Chart Starts -->
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-header border-bottom d-flex justify-content-between align-items-center">
+          <h4 class="card-title">آمار</h4>
+          <ul class="list-inline mb-0">
+            <li class="mr-50"> <i class="bullet bullet-xs bullet-info mr-50"></i>بازدید ها </li>
+            <li class="mr-1"> <i class="bullet bullet-xs bullet-success mr-50"></i>لایک ها </li>
+            <li><i class="bx bx-dots-vertical-rounded font-medium-3 align-middle cursor-pointer"></i></li>
+          </ul>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <div id="statistics-line-chart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Statistics Line Chart Ends -->
+    <!-- Sales Heat Map Chart Starts -->
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">
+            وضعیت فروش روزانه
+          </h4>
+          <div class="heading-elements">
+            <i class="bx bx-dots-vertical-rounded font-medium-3 align-middle cursor-pointer"></i>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <div id="sales-heatmap-chart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Sales Heat Map Chart Ends -->
+  </div>
+  <div class="row">
+    <!-- Statistics Multi Radial Chart Starts -->
+    <div class="col-lg-6">
+      <div class="card widget-state-multi-radial">
+        <div class="card-header d-sm-flex justify-content-between">
+          <h4 class="card-title">آمار</h4>
+          <ul class="nav nav-tabs mt-sm-0 mt-2 mb-0" role="tablist">
+            <li class="nav-item">
+              <a class=" nav-link active" id="category-tab" data-toggle="tab" href="#category" aria-controls="category" role="tab" aria-selected="true">دسته</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="service-tab" data-toggle="tab" href="#service" aria-controls="service" role="tab" aria-selected="false">خدمات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="account-tab" data-toggle="tab" href="#account" aria-controls="account" role="tab" aria-selected="false">حساب کاربری</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="text-center">
+                  <div id="statistics-multi-radial-chart"></div>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex flex-column justify-content-around">
+                <div class="tab-content">
+                  <div class="tab-pane active" id="category" aria-labelledby="category-tab" role="tabpanel">
+                    <div class="chart-info d-flex justify-content-between mb-75">
+                      <div class="d-flex align-items-center">
+                        <i class="bullet bullet-primary mr-50"></i>
+                        <span class="text-bold-600 ml-50">کامپیوتر</span>
+                      </div>
+                      <div class="text-muted">430,000 تومان</div>
+                    </div>
+                    <div class="chart-info d-flex justify-content-between mb-75">
+                      <div class="d-flex align-items-center">
+                        <i class="bullet bullet-success mr-50"></i>
+                        <span class="text-bold-600 ml-50">ذخیره سازی</span>
+                      </div>
+                      <div class="text-muted">640,000 تومان</div>
+                    </div>
+                    <div class="chart-info d-flex justify-content-between mb-75">
+                      <div class="d-flex align-items-center">
+                        <i class="bullet bullet-danger mr-50"></i>
+                        <span class="text-bold-600 ml-50">پایگاه داده</span>
+                      </div>
+                      <div class="text-muted">500,000 تومان</div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="service" aria-labelledby="service-tab" role="tabpanel">
+                    <div class="chart-info d-flex justify-content-between mb-75">
+                      <div class="d-flex align-items-center">
+                        <i class="bullet bullet-primary mr-50"></i>
+                        <span class="text-bold-600 ml-50">تعمیرات</span>
+                      </div>
+                      <div class="text-muted">740,000 تومان</div>
+                    </div>
+                    <div class="chart-info d-flex justify-content-between mb-75">
+                      <div class="d-flex align-items-center">
+                        <i class="bullet bullet-success mr-50"></i>
+                        <span class="text-bold-600 ml-50">خسارت</span>
+                      </div>
+                      <div class="text-muted">1,530,000 تومان</div>
+                    </div>
+                    <div class="chart-info d-flex justify-content-between mb-75">
+                      <div class="d-flex align-items-center">
+                        <i class="bullet bullet-danger mr-50"></i>
+                        <span class="text-bold-600 ml-50">نوسازی</span>
+                      </div>
+                      <div class="text-muted">258,000 تومان</div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="account" aria-labelledby="account-tab" role="tabpanel">
+                    <div class="chart-info d-flex justify-content-between mb-75">
+                      <div class="d-flex align-items-center">
+                        <i class="bullet bullet-primary mr-50"></i>
+                        <span class="text-bold-600 ml-50">فروش‌ها</span>
+                      </div>
+                      <div class="text-muted">230,000 تومان</div>
+                    </div>
+                    <div class="chart-info d-flex justify-content-between mb-75">
+                      <div class="d-flex align-items-center">
+                        <i class="bullet bullet-success mr-50"></i>
+                        <span class="text-bold-600 ml-50">خرید</span>
+                      </div>
+                      <div class="text-muted">523,000 تومان</div>
+                    </div>
+                    <div class="chart-info d-flex justify-content-between mb-75">
+                      <div class="d-flex align-items-center">
+                        <i class="bullet bullet-danger mr-50"></i>
+                        <span class="text-bold-600 ml-50">فروش مجدد</span>
+                      </div>
+                      <div class="text-muted">652,000 تومان</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 text-center">
+                <span class="text-muted">شما در محدوده ماهانه هستید</span>
+              </div>
+              <div class="col-6 text-right">
+                <a href="#" class="align-self-end">مشاهده همه</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Statistics Multi Radial Chart Ends -->
+    <!-- Average Order Chart Starts -->
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">میانگین سفارش</h4>
+          <div class="heading-elements">
+            <div class="form-group position-relative has-icon-left w-75 ml-auto">
+              <input type="text" class="form-control single-daterange" value="1399/03/12">
+              <div class="form-control-position">
+                <i class="bx bx-calendar"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <div id="avg-order-chart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Average Order Chart Ends -->
+  </div>
+  <div class="row">
+    <!-- Order Activity Chart Starts -->
+    <div class="col-12">
+      <div class="card widget-order-activity">
+        <div class="card-header d-md-flex justify-content-between align-items-center">
+          <h4 class="card-title">فعالیت سفارشات</h4>
+          <div class="header-right mt-md-0 mt-50">
+            <fieldset class="d-inline-block form-group position-relative has-icon-left mb-50">
+              <input type="text" class="form-control daterange">
+              <div class="form-control-position">
+                <i class="bx bx-calendar"></i>
+              </div>
+            </fieldset>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn active">ماهانه</button>
+              <button type="button" class="btn">سالانه</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <div id="order-activity-line-chart"></div>
+          </div>
+        </div>
+        <div class="card-footer border-top widget-order-activity-footer">
+          <div class="row">
+            <div class="col-md-3 col-sm-6 mb-75">
+              <div class="d-flex flex-column">
+                <span class="line-height-2 mb-50">مستقیم</span>
+                <div class="d-flex align-items-center">
+                  <div class="badge-circle badge-circle-lg badge-circle-light-secondary flex-column mr-1">
+                    <i class="bx bx-caret-up text-success font-medium-4"></i>
+                    <small class="text-muted">+31%</small>
+                  </div>
+                  <h4 class="mb-0 primary-font">2,931 تومان</h4>
+                </div>
+                <small class="text-muted mt-1">لورم ایپسوم متن ساختگی</small>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-75 mt-2 mt-sm-0">
+              <div class="d-flex flex-column">
+                <span class="line-height-2 mb-50">ایمیل</span>
+                <div class="d-flex align-items-center">
+                  <div class="badge-circle badge-circle-lg badge-circle-light-secondary flex-column mr-1">
+                    <i class="bx bx-caret-down text-danger font-medium-4"></i>
+                    <small class="text-muted">-1%</small>
+                  </div>
+                  <h4 class="mb-0 primary-font">1,231 تومان</h4>
+                </div>
+                <small class="text-muted mt-1">لورم ایپسوم متن ساختگی</small>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-75 mt-2 mt-md-0">
+              <div class="d-flex flex-column">
+                <span class="line-height-2 mb-50">ایمیل</span>
+                <div class="d-flex align-items-center">
+                  <div class="badge-circle badge-circle-lg badge-circle-light-secondary flex-column mr-1">
+                    <i class="bx bx-caret-down text-danger font-medium-4"></i>
+                    <small class="text-muted">-12%</small>
+                  </div>
+                  <h4 class="mb-0 primary-font">545 تومان</h4>
+                </div>
+                <small class="text-muted mt-1">لورم ایپسوم متن ساختگی</small>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-75 mt-2 mt-md-0">
+              <div class="d-flex flex-column">
+                <span class="line-height-2 mb-50">سایر</span>
+                <div class="d-flex align-items-center">
+                  <div class="badge-circle badge-circle-lg badge-circle-light-secondary flex-column mr-1">
+                    <i class="bx bx-caret-up text-success font-medium-4"></i>
+                    <small class="text-muted">+31%</small>
+                  </div>
+                  <h4 class="mb-0 primary-font">332 تومان</h4>
+                </div>
+                <small class="text-muted mt-1">لورم ایپسوم</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Order Activity Chart Ends -->
+  </div>
+</section>
+<!-- Widgets Charts End -->
+        </div>
+      </div>
+</div>
+    

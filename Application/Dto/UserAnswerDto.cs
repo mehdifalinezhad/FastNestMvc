@@ -64,8 +64,10 @@ namespace Application.Dto
         public string? medicineUse { get; set; }
         public string? favoriteFood { get; set; }
         public string? ReferralName { get; set; }
-        public Guid userId { get; set; }
+        public Guid UserId { get; set; }
         public string? DurationUsed { get; set; }
+        public Guid RefferId {get;set;}
+        
         public UserAnswerDto()
         {
             cites = new List<City>();

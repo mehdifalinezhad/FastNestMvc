@@ -9,15 +9,19 @@ namespace Persistant
         public IGenericRepository<Foodplan> footPlans { get; set;}
         public IGenericRepository<Symptoms> symptoms { get; set; }
         public IGenericRepository<State> states { get; set; }
+        public IGenericRepository<UserInfo> userInfoAdd { get; set; }
         public IGetCityRepository getCityRepository { get; set; }
-
+        public IGetUserInfoByUserId userInfo { get; set;}
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
             footPlans = new GenericRepository<Foodplan>(_context);
             symptoms = new GenericRepository<Symptoms>(_context);
             states = new GenericRepository<State>(_context);
+            userInfoAdd = new GenericRepository<UserInfo>(_context);
             getCityRepository = new GetCityRepository(_context);
+            userInfo=new GetUserInfoByUserId(_context);
+            
         }
 
        

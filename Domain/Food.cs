@@ -10,7 +10,8 @@ namespace Domain
     {
         public int Id{ get; set; }
         public string name{ get; set; }
-        //public int FoodPlanId{ get; set; }
+        public int FoodPlanId{ get; set; }
+       
         public Foodplan foodplan{ get; set; }
         
     

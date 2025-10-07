@@ -62,7 +62,7 @@ namespace persistant
         public DbSet<Symptoms> Symptoms { get; set; } 
         public DbSet<UserInfo> UserInfo { get; set; } 
         public DbSet<Vitamins> Vitamins { get; set; } 
-        public DbSet<UserSymptoms> UserSymptoms { get; set; } 
+       //public DbSet<UserSymptoms> UserSymptoms { get; set; } 
  
    
 

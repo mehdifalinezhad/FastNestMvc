@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using persistant;
 
 namespace Persistant
-{
+{  
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private readonly AppDbContext _context;
@@ -21,7 +21,7 @@ namespace Persistant
         }
 
         public async Task<IEnumerable<T>> GetAllAsync()
-        {
+       {
             return await _dbSet.ToListAsync();
         }
 

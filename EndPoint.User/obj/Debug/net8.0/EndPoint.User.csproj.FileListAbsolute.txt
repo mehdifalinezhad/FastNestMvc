@@ -176,6 +176,7 @@ C:\AspOwn\BaseProjectMvc\EndPoint.User\obj\Debug\net8.0\refint\EndPoint.User.dll
 C:\AspOwn\BaseProjectMvc\EndPoint.User\obj\Debug\net8.0\EndPoint.User.pdb
 C:\AspOwn\BaseProjectMvc\EndPoint.User\obj\Debug\net8.0\EndPoint.User.genruntimeconfig.cache
 C:\AspOwn\BaseProjectMvc\EndPoint.User\obj\Debug\net8.0\ref\EndPoint.User.dll
+C:\AspOwn\FastNessMvc\EndPoint.User\bin\Debug\net8.0\EndPoint.User.dll
 C:\AspOwn\FastNessMvc\EndPoint.User\bin\Debug\net8.0\appsettings.Development.json
 C:\AspOwn\FastNessMvc\EndPoint.User\bin\Debug\net8.0\appsettings.json
 C:\AspOwn\FastNessMvc\EndPoint.User\bin\Debug\net8.0\EndPoint.User.staticwebassets.runtime.json
@@ -183,7 +184,6 @@ C:\AspOwn\FastNessMvc\EndPoint.User\bin\Debug\net8.0\EndPoint.User.staticwebasse
 C:\AspOwn\FastNessMvc\EndPoint.User\bin\Debug\net8.0\EndPoint.User.exe
 C:\AspOwn\FastNessMvc\EndPoint.User\bin\Debug\net8.0\EndPoint.User.deps.json
 C:\AspOwn\FastNessMvc\EndPoint.User\bin\Debug\net8.0\EndPoint.User.runtimeconfig.json
-C:\AspOwn\FastNessMvc\EndPoint.User\bin\Debug\net8.0\EndPoint.User.dll
 C:\AspOwn\FastNessMvc\EndPoint.User\bin\Debug\net8.0\EndPoint.User.pdb
 C:\AspOwn\FastNessMvc\EndPoint.User\bin\Debug\net8.0\Azure.Core.dll
 C:\AspOwn\FastNessMvc\EndPoint.User\bin\Debug\net8.0\Azure.Identity.dll

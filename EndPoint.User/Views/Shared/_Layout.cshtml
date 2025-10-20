@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="~/FrestAssets/vendors/css/extensions/swiper.min.css">
     <link href="~/Frestassets/vendors/css/forms/select/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="~/FrestAssets/vendors/css/ui/prism.min.css">
-    <link rel="stylesheet" type="text/css" href="~/FrestAssets/vendors/css/file-uploaders/dropzone.min.css">
+    @* <link rel="stylesheet" type="text/css" href="~/FrestAssets/vendors/css/file-uploaders/dropzone.min.css"> *@
 
     <link rel="stylesheet" type="text/css" href="~/FrestAssets/vendors/css/pickers/pickadate/pickadate.css">
     <link rel="stylesheet" type="text/css" href="~/FrestAssets/vendors/css/pickers/daterange/daterangepicker.css">
@@ -248,7 +248,7 @@
                     <ul class="dropdown-menu dropdown-menu-right">
                         <li data-menu="">
                             
-                            <a class="dropdown-item align-items-center" href="/Dashboard/DashboardIndex?UserId=@Context.Session.GetString("ActiveUser");" data-toggle="dropdown"><i class="bx bx-left-arrow-alt"></i>داشبورد کاربر</a>
+                            <a class="dropdown-item align-items-center" href="/Dashboard/DashboardIndex?UserId=@Context.Session.GetString("ActiveUser")" data-toggle="dropdown"><i class="bx bx-left-arrow-alt"></i>داشبورد کاربر</a>
                         </li>
                         <li data-menu="">
                             <a class="dropdown-item align-items-center" href="dashboard-analytics.html" data-toggle="dropdown"><i class="bx bx-left-arrow-alt"></i>آمار تحلیلی</a>
@@ -259,7 +259,7 @@
                     <a class="dropdown-toggle nav-link" href="index.html" data-toggle="dropdown"><i class="menu-livicon" data-icon="desktop"></i><span data-i18n="Dashboard">برنامه غذایی</span></a>
                     <ul class="dropdown-menu dropdown-menu-right">
                         <li data-menu="">
-                            <a class="dropdown-item align-items-center" href="/FoodPlan/FirstForm?UserId=@Context.Session.GetString("ActiveUser");" data-toggle="dropdown"><i class="bx bx-left-arrow-alt"></i> تکمیل فرم اولیه</a>
+                            <a class="dropdown-item align-items-center" href="/FoodPlan/FirstForm?UserId=@Context.Session.GetString("ActiveUser")" data-toggle="dropdown"><i class="bx bx-left-arrow-alt"></i> تکمیل فرم اولیه</a>
                         </li>
                         <li data-menu="">
                             <a class="dropdown-item align-items-center" href="dashboard-analytics.html" data-toggle="dropdown"><i class="bx bx-left-arrow-alt"></i>آمار تحلیلی</a>

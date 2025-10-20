@@ -1,5 +1,6 @@
 ﻿@using Application.Dto
 @model UserAnswerDto
+
 <div class="app-content content">
     <div class="content-overlay"></div>
     <div class="content-wrapper">
@@ -28,7 +29,7 @@
         <div class="content-body">
             <!-- Basic Inputs start -->
             <form method="post" asp-controller="FoodPlan" asp-action="FirstForm" enctype="multipart/form-data">
-                <input type="hidden" asp-for="UserId" />
+                <input type="hidden" asp-for="LoginedUser.Id">
                 <section id="basic-input">
                     <div class="row">
                         <div class="col-md-12">
@@ -66,9 +67,12 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <fieldset class="form-group">
-                                                    <label for="disabledInput">نام و نام خانوادگی </label>
-                                                    <input type="text" asp-for="FullName" id="disabledInput" class="form-control" placeholder="نام و نام خانوادگی">
-
+                                                    <label for="disabledInput">نام  </label>
+                                                    <input type="text" asp-for="LoginedUser.FirstName" id="disabledInput" class="form-control" placeholder="نام و نام خانوادگی">
+                                                </fieldset>
+                                                <fieldset class="form-group">
+                                                    <label for="disabledInput">  نام خانوادگی </label>
+                                                    <input type="text" asp-for="LoginedUser.LastName" id="disabledInput" class="form-control" placeholder="نام و نام خانوادگی">
                                                 </fieldset>
                                                 <fieldset class="form-group">
                                                     <label for="disabledInput">وزن</label>
@@ -102,18 +106,23 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">آپلود نیم رخ </h4>
+                                    <h4 class="card-title">آپلود نیمرخ </h4>
 
-                                </div>                             
+                                </div>
                                 <div class="card-content">
                                     <div class="card-body">
 
-                                        <input id="select-files" type="file" class="btn btn-primary mb-1"/><i class="icon-file2"></i> <span>برای انتخاب فایل روی من کلیک کنید</span>
-                                            <div  class="dropzone dropzone-area"  id="dpz-btn-select-files">
-                                                <div class="dz-message">فایل های خود را برای ارسال به اینجا بکشید</div>
+                                        <div class="upload-box">
+                                            <div class="dropzone-area" id="dropzone-area">
+                                                فایل‌ها را اینجا بکشید یا از دکمه زیر انتخاب کنید
                                             </div>
-                            
-                                   
+
+                                            <button type="button" id="select-btn" class="btn btn-primary mt-2">📁 انتخاب فایل‌ها</button>
+
+                                            <input id="select-files" asp-for="ImageFiles" type="file" multiple hidden />
+                                            <div id="preview-container" class="preview-container"></div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -134,10 +143,10 @@
                                             <div class="col-md-6">
 
                                                 <fieldset class="form-group position-relative has-icon-left">
-                                          
+
                                                     <label for="theDate">تاریخ تولد</label>
                                                     <input type="text" asp-for="BirthDay" id="theDate" class="form-control shamsi-datepicker-list" placeholder="انتخاب تاریخ">
-                                       
+
                                                 </fieldset>
                                                 <fieldset class="form-group">
                                                     <label for="basicInput">انتخاب استان</label>
@@ -151,7 +160,7 @@
                                                 </fieldset>
 
                                                 <fieldset class="form-group position-relative has-icon-left">
-                                                   
+
                                                     <label for="daterangepicker">تاریخ آغاز دوره </label>
                                                     <input type="text" asp-for="registerDate" id="daterangepicker" class="form-control shamsi-datepicker-list" placeholder="انتخاب تاریخ">
                                                     @* <div class="form-control-position">
@@ -215,7 +224,7 @@
                                                 </fieldset>
                                                 <fieldset class="form-group">
                                                     <div class="checkbox">
-                                                        <input type="checkbox" class="checkbox-input" id="checkbox1">
+                                                        <input type="checkbox"asp-for="Deal" class="checkbox-input" id="checkbox1">
                                                         <label for="checkbox1">تعهد نامه و (شرایط و ظوابط) را مصالعه کردم و قبول دارم:</label>
                                                     </div>
                                                 </fieldset>
@@ -229,21 +238,27 @@
 
 
                                                 </fieldset>
-                                                    
+
                                                 <fieldset class="form-group">
                                                     <label for="citySelect">انتخاب شهر</label>
                                                     <select asp-for="CityId" class="form-control" id="citySelect">
                                                     </select>
                                                 </fieldset>
                                                 <fieldset class="form-group">
-                                                    <label for="disabledInput">معرف</label>
-                                                    <input type="text" asp-for="ReferralName" class="form-control" id="readonlyInput" value="معرف">
+                                                    <label for="ReferslSelect">معرف</label>
+                                                    <select asp-for="RefferId" class="form-control" id="ReferslSelect">
+                                                        @foreach (var item in Model.RefferalsUser)
+                                                        {
+                                                            <option value="@item.Id">@item.FirstName@item.LastName</option>
+
+                                                        }
+                                                    </select>
                                                 </fieldset>
 
                                                 <fieldset class="form-group">
                                                     <label for="disabledInput">شماره همراه </label>
-                                                    <input type="text" id="disabledInput" asp-for="PhoneNumber" class="form-control" placeholder="شغل">
-                                                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                                    <input type="text" id="disabledInput" asp-for="LoginedUser.PhoneNumber" class="form-control" placeholder="شغل">
+                                                    <span asp-validation-for="LoginedUser.PhoneNumber" class="text-danger"></span>
                                                 </fieldset>
                                                 <fieldset class="form-group">
                                                     <label for="helperText">وضعیت تاهل </label>
@@ -279,23 +294,23 @@
                                                     <i class="bx bx-calendar"></i>
                                                 </div> *@
                                                 </fieldset>
-
+                                            
                                                 <fieldset class="form-group">
-                                                    <label for="large-select-multi">کدام یک از نشانه های  زیر را دارید</label>
-                                                    <select asp-for="SelectedSymptomIds" class="select2-size-lg form-control select2-hidden-accessible" multiple id="large-select-multi" data-select2-id="large-select-multi" tabindex="-1" aria-hidden="true">
+                                                    <label for="large-select-multi" class="form-label">کدام یک از نشانه‌های زیر را دارید؟</label>
+
+                                                    <select asp-for="SelectedSymptomIds" id="large-select-multi" class="form-control select2-size-lg" multiple="multiple" style="width: 100%;">
                                                         @foreach (var item in Model.Symsons)
                                                         {
-                                                            <option value="@item.Id" data-select2-id="@item.Id">@item.Description</option>
+                                                            <option value="@item.Id">@item.Description</option>
                                                         }
                                                     </select>
                                                 </fieldset>
-
                                                 <fieldset class="form-group">
                                                     <label for="basicInput">چه غذاهایی رو نمیتوانید بخورید؟</label>
                                                     <input type="text" asp-for="dislikeFood" class="form-control" id="basicInput" placeholder="غذاهایی که حال نمیکنی">
                                                 </fieldset>
                                                 <fieldset class="form-group">
-                                                    <label for="basicInput">اغلب صبحانه چه چیزی و چه موقع میخورید؟ </label>
+                                                    <label for="basicInput">اغلب صبحانه چه چیزی و چه موقع میخورید؟</label>
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <input type="text" class="form-control" id="basicInput" placeholder="صبحانه ها">
@@ -345,39 +360,39 @@
             <!-- Input Style start -->
         </div>
     </div>
-    </div>
+</div>
 
 
 
 @section select2Js {
-        <script src="~/FrestAssets/js/scripts/forms/select/form-select2.js"></script>
+    <script src="~/FrestAssets/js/scripts/forms/select/form-select2.js"></script>
 }
 
 @section theDateTime {
 
-        <script src="~/FrestAssets/js/scripts/forms/number-input.js"></script>
-        <script src="~/FrestAssets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>
+    <script src="~/FrestAssets/js/scripts/forms/number-input.js"></script>
+    <script src="~/FrestAssets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>
     <script src="~/FrestAssets/js/scripts/extensions/dropzone.js"></script>
 
 
 }
-    <script type="text/javascript">
-        function getCity() {
-            var stateId=document.getElementById("theState").value;
-            $.ajax({
-                url: '/FoodPlan/CallGetCitys',
-                type: 'get',
-                data: { thestateId:stateId },
-                success:function (response){
-                var citysSelect=$("#citySelect");
-                citysSelect.empty();
-                $.each(response,function(i,city){
-                citysSelect.append("<option value='"+city.id+"'>"+city.name+"</option>")
-                })
-                },
-                error: function (xhr, status, error) {
-                    console.error("خطا در دریافت شهر ها" + error);
-                }
-            });
-        };
-    </script>
+<script type="text/javascript">
+    function getCity() {
+        var stateId=document.getElementById("theState").value;
+        $.ajax({
+            url: '/FoodPlan/CallGetCitys',
+            type: 'get',
+            data: { thestateId:stateId },
+            success:function (response){
+            var citysSelect=$("#citySelect");
+            citysSelect.empty();
+            $.each(response,function(i,city){
+            citysSelect.append("<option value='"+city.id+"'>"+city.name+"</option>")
+            })
+            },
+            error: function (xhr, status, error) {
+                console.error("خطا در دریافت شهر ها" + error);
+            }
+        });
+    };
+</script>

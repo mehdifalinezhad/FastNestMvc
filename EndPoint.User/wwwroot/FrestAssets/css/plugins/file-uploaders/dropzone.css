@@ -7,7 +7,7 @@
 }
 
 .dropzone .dz-message {
-	/* dropzone message customization */
+	 dropzone message customization 
 	font-size: 1.5rem;
 	position: absolute;
 	top: 44%;
@@ -23,7 +23,7 @@
 }
 
 .dropzone .dz-message:before {
-	/* dropzone message icon */
+	 dropzone message icon 
 	content: '\ea81';
 	font-family: 'boxicons';
 	font-size: 3.5rem;
@@ -54,7 +54,7 @@
 }
 
 .dropzone .dz-preview .dz-error-message {
-	/* dropzone error message */
+	 dropzone error message 
 	min-width: 113px;
 	top: 0;
 	right: 0;
@@ -84,9 +84,61 @@
 	color: #FF2829;
 }
 
-/* For Small Screen drop Logo */
+ /*For Small Screen drop Logo */
 @media (max-width: 575px) {
 	.dropzone .dz-message:before {
 		top: 7.14rem;
 	}
 }
+
+.dropzone-area {
+	border: 2px dashed #007bff;
+	padding: 20px;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 10px;
+	transition: background 0.2s ease-in-out;
+}
+
+	.dropzone-area:hover {
+		background-color: #f0f8ff;
+	}
+
+.preview-container {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 15px;
+	gap: 10px;
+}
+
+.preview-item {
+	position: relative;
+	display: inline-block;
+}
+
+	.preview-item img {
+		width: 100px;
+		height: 100px;
+		object-fit: cover;
+		border-radius: 8px;
+		border: 1px solid #ccc;
+	}
+
+.remove-btn {
+	position: absolute;
+	top: -8px;
+	right: -8px;
+	background: rgba(255, 0, 0, 0.8);
+	color: white;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+	.remove-btn:hover {
+		background: red;
+	}

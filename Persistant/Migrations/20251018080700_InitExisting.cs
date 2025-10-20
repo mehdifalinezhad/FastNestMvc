@@ -100,6 +100,19 @@ namespace Persistant.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Symptoms",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Symptoms", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -233,7 +246,7 @@ namespace Persistant.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     userId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    TotalPrise = table.Column<float>(type: "real", nullable: false)
+                    TotalPrise = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -362,26 +375,6 @@ namespace Persistant.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Symptoms",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FoodplanId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Symptoms", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Symptoms_Foodplan_FoodplanId",
-                        column: x => x.FoodplanId,
-                        principalTable: "Foodplan",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Vitamins",
                 columns: table => new
                 {
@@ -409,18 +402,18 @@ namespace Persistant.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ImageUrls = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    gender = table.Column<int>(type: "int", nullable: false),
-                    marrige = table.Column<int>(type: "int", nullable: false),
+                    gender = table.Column<int>(type: "int", nullable: true),
+                    marrige = table.Column<int>(type: "int", nullable: true),
                     LastMeal = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FavoritFood = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ActionSkiny = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CityId = table.Column<int>(type: "int", nullable: false),
+                    CityId = table.Column<int>(type: "int", nullable: true),
                     AbdominalRound = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     ArmRound = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     ThighRound = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     LegRound = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     AssRound = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
-                    ImageFiles = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageFiles = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Deal = table.Column<bool>(type: "bit", nullable: true),
                     wakeTime = table.Column<int>(type: "int", nullable: true),
                     SleepTime = table.Column<int>(type: "int", nullable: true),
@@ -433,8 +426,8 @@ namespace Persistant.Migrations
                     EaveningMeal = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Job = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DailyActivity = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BirthDay = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    registerDate = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BirthDay = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    registerDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Historysickness = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     age = table.Column<int>(type: "int", nullable: true),
                     height = table.Column<int>(type: "int", nullable: true),
@@ -442,7 +435,6 @@ namespace Persistant.Migrations
                     dislikeFood = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     medicineUse = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     favoriteFood = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ReferralName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DurationUsed = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -510,15 +502,15 @@ namespace Persistant.Migrations
                 name: "SymptomsUserInfo",
                 columns: table => new
                 {
-                    SymsomsId = table.Column<int>(type: "int", nullable: false),
+                    SymptomsId = table.Column<int>(type: "int", nullable: false),
                     userInfosId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SymptomsUserInfo", x => new { x.SymsomsId, x.userInfosId });
+                    table.PrimaryKey("PK_SymptomsUserInfo", x => new { x.SymptomsId, x.userInfosId });
                     table.ForeignKey(
-                        name: "FK_SymptomsUserInfo_Symptoms_SymsomsId",
-                        column: x => x.SymsomsId,
+                        name: "FK_SymptomsUserInfo_Symptoms_SymptomsId",
+                        column: x => x.SymptomsId,
                         principalTable: "Symptoms",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -628,11 +620,6 @@ namespace Persistant.Migrations
                 name: "IX_Spice_foodPlanId",
                 table: "Spice",
                 column: "foodPlanId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Symptoms_FoodplanId",
-                table: "Symptoms",
-                column: "FoodplanId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SymptomsUserInfo_userInfosId",

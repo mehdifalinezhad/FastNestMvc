@@ -13,7 +13,7 @@ namespace Application.Dto
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "شماره موبایل الزامی است")]
-       // [RegularExpression(@"^09\d{9}$", ErrorMessage = "فرمت شماره موبایل معتبر نیست")]
+        //[RegularExpression(@"^09\d{9}$", ErrorMessage = "فرمت شماره موبایل معتبر نیست")]
         public string PhoneNumber { get; set;}
         [Required(ErrorMessage = "ایمیل الزامی است")]
         //[EmailAddress(ErrorMessage = "فرمت ایمیل معتبر نیست")]

@@ -19,17 +19,20 @@ namespace EndPoint.User.Controllers
             this.unitOfWork = unitOfWork;
         }
 
-        public IActionResult DashboardIndex(string UserId)
+        public IActionResult DashboardIndex(string UserId="")
         {
+                if (UserId == "")
+                {
+                    TempData["ToastType"] = "warning";
+                    TempData["ToastMessage"] = "شما اول باید ثبت نام بعد لاگین کنید";
+                    return RedirectToAction("Index", "Home");
+                }
 
             Domain.User DashUser = _userManager.Users.FirstOrDefault(c => c.Id.ToString() == UserId);
             var theUserInfo = unitOfWork.userInfo;
              UserInfo userInfoDash= theUserInfo.GetUserInfo(UserId);
            DashBoardDto dashBoardDto = ModelsToDtos.UserUserInfoModelToDashboadDto(DashUser,userInfoDash);
-            
-
             unitOfWork.SaveChangesAsync();
-
             return View(dashBoardDto);
         }
     

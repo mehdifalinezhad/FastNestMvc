@@ -16,10 +16,10 @@ namespace Application.Dto
         [Required(ErrorMessage = "نام و نام خانوادگی الزامی است ")]
         public string? FullName{ get; set; }
         [Required(ErrorMessage = "شماره موبایل الزامی است")]
-        [RegularExpression(@"^09\d{9}$", ErrorMessage = "فرمت شماره موبایل معتبر نیست")]
+        //[RegularExpression(@"^09\d{9}$", ErrorMessage = "فرمت شماره موبایل معتبر نیست")]
         public string PhoneNumber { get; set; }
         [Required(ErrorMessage = "ایمیل الزامی است")]
-        [EmailAddress(ErrorMessage = "فرمت ایمیل معتبر نیست")]
+       // [EmailAddress(ErrorMessage = "فرمت ایمیل معتبر نیست")]
         public string? Email { get; set; }
         public decimal? AbdominalRound { get; set; }
         public decimal? ArmRound { get; set; }
@@ -64,9 +64,11 @@ namespace Application.Dto
         public string? medicineUse { get; set; }
         public string? favoriteFood { get; set; }
         public string? ReferralName { get; set; }
-        public Guid UserId { get; set; }
+       //public Guid UserId { get; set; }
         public string? DurationUsed { get; set; }
         public Guid RefferId {get;set;}
+        public List<User> RefferalsUser { get; set; }
+        public User LoginedUser { get; set; }
         
         public UserAnswerDto()
         {

@@ -1482,8 +1482,14 @@ wwwroot\FrestAssets\vendors\js\ui\plyr.min.js
 wwwroot\FrestAssets\vendors\js\ui\prism.min.js
 wwwroot\FrestAssets\vendors\js\ui\prism-treeview.js
 wwwroot\FrestAssets\vendors\js\vendors.min.js
+wwwroot\برهان\1169a8a3-5711-4817-8544-a5e45bd60450faq-video.jpg
+wwwroot\برهان\57dd6d46-0509-4a97-8a0e-1c5b65f2d339Test1.jpg
 wwwroot\برهان\59a9b8fd-a417-47fa-a728-d6774013c7c2e8b3dc70-34aa-4a97-81c3-dcaa49a7b503.jpg
+wwwroot\برهان\5c54d1b1-d69b-4d67-99d8-cacd3ca575d2e8b3dc70-34aa-4a97-81c3-dcaa49a7b503.jpg
+wwwroot\برهان\7a0da255-3368-4d7e-9521-4f282e1c5ec4Capture.PNG
 wwwroot\برهان\91ba3c2b-3e84-4cc8-b8d8-b6d9dcafdf1ffaq-video.jpg
+wwwroot\برهان\be816b05-e211-4499-ab7e-d63c98c4023fCanew.PNG
+wwwroot\برهان\e7c9b8ca-6569-429c-9304-49896af34238faq-video.jpg
 wwwroot\فالی نژاد\0779e9e1-9f1f-41d2-84f5-3d2e9f2513e4576151-Girly-Girl.jpg
 wwwroot\فالی نژاد\07e34b82-a9a5-4525-9ebb-24881ff6c774Canew.PNG
 wwwroot\فالی نژاد\0e750a4b-b557-4845-852f-7c38a2b7eab4Capture.PNG

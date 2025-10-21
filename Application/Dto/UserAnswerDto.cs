@@ -27,7 +27,7 @@ namespace Application.Dto
         public decimal? LegRound { get; set; }
         public decimal? AssRound { get; set; }
         public List<IFormFile> ImageFiles { get; set; }
-        public bool? Deal { get; set; }
+        public bool Deal { get; set; }
         //public bool HairLose { get; set;}  ====>this for symsone
         public int? wakeTime { get; set; }
         public int? SleepTime { get; set; }

@@ -42,7 +42,8 @@ namespace EndPoint.User.Controllers
             };
            model.states.Insert(0, new State() { Id = 0, Name = "استان را قبل از شهر انتخاب کنید" });
            Domain.User thisUser = _unitOfWork.GetUserByUserId(UserId);
-           model.LoginedUser= thisUser; 
+           model.LoginedUser= thisUser;
+            model.RefferalsUser.Insert(0, new Domain.User() { Id = Guid.Empty, FirstName = "لطفا یکی از معرف های زیر را انتخاب کنید" });
 
             return View(model);
         }
@@ -62,7 +63,7 @@ namespace EndPoint.User.Controllers
             //}
 
             UserInfo userInfo = DtosToModels.UserAnswerToUserInfoModel(dto);
-            ICollection<Symptoms> symptoms = _unitOfWork.SysmsonIdToSymsons(dto.SelectedSymptomIds);
+            ICollection<Symptoms> symptoms = _unitOfWork.SymsonIdToSymsons(dto.SelectedSymptomIds);
             userInfo.Symptoms= symptoms;    
             var OrderAdded=_unitOfWork.userInfoAdd;
             
@@ -70,8 +71,8 @@ namespace EndPoint.User.Controllers
 
             await _unitOfWork.SaveChangesAsync();
             var theUser = await _userManager.Users.Where(c => c.Id == dto.LoginedUser.Id).FirstOrDefaultAsync();
-           theUser.ReferrerId=dto.RefferId;
-           await _userManager.UpdateAsync(theUser);
+            theUser.ReferrerId=dto.RefferId;
+            await _userManager.UpdateAsync(theUser);
             TempData["ToastType"] = "success";
             TempData["ToastMessage"] = "درج اطلاعات با موفقیت انجام شد";
             var states = _unitOfWork.states;
@@ -80,6 +81,8 @@ namespace EndPoint.User.Controllers
             dto.states = AllStats.ToList();
             dto.states.Insert(0, new State() { Id = 0, Name = "استان را قبل از شهر انتخاب کنید" });
             dto.RefferalsUser = _unitOfWork.GetUsers();
+            dto.RefferalsUser.Insert(0, new Domain.User() { Id = Guid.Empty, FirstName= "لطفا یکی از معرف های زیر را انتخاب کنید" });
+
             return View(dto);         
         }
 

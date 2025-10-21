@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using Application.Dto;
+using Domain;
 
 namespace Application
 { 
@@ -13,8 +14,9 @@ namespace Application
         IGetUserInfoByUserId userInfo { get; set; }
         public User GetUserByUserId(string UserId);
         public List<User> GetUsers();
-        public ICollection<Symptoms> SysmsonIdToSymsons(List<int> susmsonsIds);
+        public ICollection<Symptoms> SymsonIdToSymsons(List<int> susmsonsIds);
         Task<int> SaveChangesAsync();
+        public Task<DashBoardDto> GetUserAndUserInfo(string UserId);
     }
 }
     

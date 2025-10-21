@@ -24,7 +24,8 @@ namespace Domain
         public City? city { get; set;}
         public ICollection<Symptoms> Symptoms { get; set;}    
         public ICollection<Sickness> sicKness {get; set;}    
-        public ICollection<Medicines> medicins{get; set;}
+        public ICollection<Medicines> medicins {get; set;}
+        public ICollection<Orders> orders {get; set;}
         public decimal? AbdominalRound { get; set; }
         public decimal? ArmRound { get; set; }
         public decimal? ThighRound { get; set; }
@@ -45,13 +46,13 @@ namespace Domain
         public string? Job { get; set; }
         //اقدامات لاغری
         public string? DailyActivity { get; set; }
-       // public string SelectedSymptomIds { get; set; }
+       //public string SelectedSymptomIds { get; set; }
         public string? BirthDay { get; set; }
         public string? registerDate { get; set; }
-      //  public List<City> cites { get; set; }
+       //public List<City> cites { get; set; }
         [Range(1, int.MaxValue, ErrorMessage = "لطفاً یک استان انتخاب کنید")]
         //public int StateId { get; set; }
-     //   public int CityId { get; set; }
+       //public int CityId { get; set; }
 
        //ublic List<State> states { get; set; }
         public string? Historysickness { get; set; }

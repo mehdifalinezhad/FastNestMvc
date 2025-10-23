@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using persistant;
 
@@ -11,9 +12,11 @@ using persistant;
 namespace Persistant.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251022063005_AdduserInfoToOrders")]
+    partial class AdduserInfoToOrders
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -90,26 +93,26 @@ namespace Persistant.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("CategoryFoodPlanId")
+                    b.Property<int>("CategoryFoodPlanId")
                         .HasColumnType("int");
 
                     b.Property<int?>("DuratioTImeMeal")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("ExpirationDate")
+                    b.Property<DateTime>("ExpirationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<float?>("Price")
+                    b.Property<float>("Price")
                         .HasColumnType("real");
 
-                    b.Property<int>("userInfoId")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryFoodPlanId");
 
-                    b.HasIndex("userInfoId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Foodplan");
                 });
@@ -693,17 +696,17 @@ namespace Persistant.Migrations
                     b.HasOne("Domain.CategoryFoodPlan", "CategoryFoodPlan")
                         .WithMany("foodplans")
                         .HasForeignKey("CategoryFoodPlanId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("Domain.UserInfo", "userInfo")
-                        .WithMany("foodPlans")
-                        .HasForeignKey("userInfoId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("Domain.User", "User")
+                        .WithMany("foodPlans")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.Navigation("CategoryFoodPlan");
 
-                    b.Navigation("userInfo");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Domain.Medicines", b =>
@@ -913,6 +916,8 @@ namespace Persistant.Migrations
                 {
                     b.Navigation("UserInfo");
 
+                    b.Navigation("foodPlans");
+
                     b.Navigation("opinions");
 
                     b.Navigation("referres");
@@ -920,8 +925,6 @@ namespace Persistant.Migrations
 
             modelBuilder.Entity("Domain.UserInfo", b =>
                 {
-                    b.Navigation("foodPlans");
-
                     b.Navigation("medicins");
 
                     b.Navigation("orders");

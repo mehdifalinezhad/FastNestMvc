@@ -9,8 +9,8 @@ namespace EndPoint.User.Utilities
         {
             DashBoardDto dto = new DashBoardDto()
             {
-                foodplans = user.foodPlans,
-                orders=user.orders,                
+               // foodplans = user.foodPlans,
+               // orders=user.orders,                
             };
             return dto;
 

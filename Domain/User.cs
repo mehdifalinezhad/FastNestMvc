@@ -4,8 +4,7 @@ namespace Domain
 {
     public class User : IdentityUser<Guid>
     {
-        public ICollection<Foodplan>? foodPlans { get; set; }
-        public ICollection<Orders>? orders { get; set; }
+        
         public ICollection<Opinion>? opinions { get; set;}
         public Guid? ReferrerId { get; set;} 
         public User? Referrer { get; set;} 

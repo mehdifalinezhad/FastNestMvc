@@ -26,6 +26,7 @@ namespace Domain
         public ICollection<Sickness> sicKness {get; set;}    
         public ICollection<Medicines> medicins {get; set;}
         public ICollection<Orders> orders {get; set;}
+        public ICollection<Foodplan>? foodPlans { get; set; }
         public decimal? AbdominalRound { get; set; }
         public decimal? ArmRound { get; set; }
         public decimal? ThighRound { get; set; }

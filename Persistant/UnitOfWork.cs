@@ -57,32 +57,33 @@ namespace Persistant
         public ICollection<Symptoms> SymsonIdToSymsons(List<int> sysmsonsIds)
         {
             var sysmsonsObject = _context.Symptoms.Where(s => sysmsonsIds.Contains(s.Id)).ToList();
-
             return sysmsonsObject;
         }
         public async Task<DashBoardDto> GetUserAndUserInfo(string UserId)
         {
          
-                Guid userGuid = Guid.Parse(UserId);
-              User? dashUser =_userManager.Users.Where(c => c.Id == userGuid).FirstOrDefault();
-            //UserInfo userInfo =await userInfoAdd.GetByIdAsync(1);
-            var result = await _context.UserInfo.Where(o => o.UserId == userGuid)
-             .Include(c => c.Symptoms).FirstOrDefaultAsync();
-            
-            //.Select(a => new DashBoardDto()
-            //{\
-            //  userInfo = new UserInfo()
-            //  {
-            //      age = a.age,
-            //      weight = a.weight,
-            //      BirthDay = a.BirthDay,
-            //      ImageUrls = a.ImageUrls
-            //  },
-            //}).FirstOrDefaultAsync();
+          Guid userGuid = Guid.Parse(UserId);
+          User? dashUser =_userManager.Users.Where(c => c.Id == userGuid).FirstOrDefault();
+          var result = await _context.UserInfo.Where(o => o.UserId == userGuid)
+            .Select(w => new UserInfo
+            {
+                age = w.age,
+                dislikeFood = w.dislikeFood,
+                gender = w.gender,
+                ArmRound = w.ArmRound,
+                AssRound = w.AssRound,
+                ActionSkiny = w.ActionSkiny,
+                ThighRound = w.ThighRound,
+                Symptoms = w.Symptoms,
+                //orders =w.orders.Select(v=>new {Id=v.Id,Totalprise=v.TotalPrise }).ToList(),
+                foodPlans = w.foodPlans
+                
+            })
+            .FirstOrDefaultAsync();
             DashBoardDto returnDto = new()
             { 
-            
-            userInfo=result
+            userInfo=result,
+            user= dashUser,
             };
 
             return returnDto;

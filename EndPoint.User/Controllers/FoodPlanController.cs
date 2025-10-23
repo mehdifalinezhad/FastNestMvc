@@ -6,6 +6,7 @@ using EndPoint.User.Utilities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 namespace EndPoint.User.Controllers
 {
     public class FoodPlanController : Controller
@@ -76,6 +77,7 @@ namespace EndPoint.User.Controllers
             TempData["ToastType"] = "success";
             TempData["ToastMessage"] = "درج اطلاعات با موفقیت انجام شد";
             var states = _unitOfWork.states;
+            
             var AllStats = await states.GetAllAsync();
 
             dto.states = AllStats.ToList();
@@ -85,9 +87,6 @@ namespace EndPoint.User.Controllers
 
             return View(dto);         
         }
-
-      
-       
 
         //this is for get city by State
         public ActionResult CallGetCitys(int thestateId)

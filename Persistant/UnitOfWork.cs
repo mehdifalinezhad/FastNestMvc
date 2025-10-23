@@ -64,29 +64,25 @@ namespace Persistant
          
           Guid userGuid = Guid.Parse(UserId);
           User? dashUser =_userManager.Users.Where(c => c.Id == userGuid).FirstOrDefault();
-          var result = await _context.UserInfo.Where(o => o.UserId == userGuid)
-            .Select(w => new UserInfo
-            {
-                age = w.age,
-                dislikeFood = w.dislikeFood,
-                gender = w.gender,
-                ArmRound = w.ArmRound,
-                AssRound = w.AssRound,
-                ActionSkiny = w.ActionSkiny,
-                ThighRound = w.ThighRound,
-                Symptoms = w.Symptoms,
-                //orders =w.orders.Select(v=>new {Id=v.Id,Totalprise=v.TotalPrise }).ToList(),
-                foodPlans = w.foodPlans
-                
-            })
+           var result= await _context.UserInfo.Where(o => o.UserId == userGuid)
+              .Select(w => new DashBoardDto
+              {
+                  userInfo = new UserInfo()
+                  {
+                      AssRound=w.AssRound,
+                      ThighRound=w.ThighRound,
+                 
+                      ImageUrls=w.ImageUrls,
+                      registerDate=w.registerDate,
+                  },
+                  symptoms = w.Symptoms,
+                  orders=w.orders
+                  
+              })
             .FirstOrDefaultAsync();
-            DashBoardDto returnDto = new()
-            { 
-            userInfo=result,
-            user= dashUser,
-            };
-
-            return returnDto;
+            result.user = dashUser;
+            return result;
+            
          }
         
     }

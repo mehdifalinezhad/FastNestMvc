@@ -22,6 +22,7 @@ namespace Application.Dto
         public int FoodplanId { get; set; }
         public ICollection<Foodplan> foodplans {get; set;}
         public ICollection<Orders> orders {get; set;}
+        public ICollection<Symptoms> symptoms {get; set;}
         public UserInfo userInfo { get; set; }
        
     }
